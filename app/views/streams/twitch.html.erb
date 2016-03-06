@@ -1,0 +1,34 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-md-8 pull-left" id="strim" style="height:100vh; position: relative;right: 10.2%">
+      <script src= "http://player.twitch.tv/js/embed/v1.js"></script>
+      <div id="<%= params[:channel]%>"></div>
+      <script type="text/javascript">
+        var options = {
+          width: document.getElementById('background').offsetWidth - 300,
+          height: document.getElementById('background').offsetHeight - 53,
+          channel: "<%= params[:channel]%>",
+          //video: "{VIDEO_ID}"
+        };
+        var player = new Twitch.Player("<%= params[:channel]%>", options);
+        player.setVolume(0.5);
+      </script>
+    </div>
+
+    <div style="position: relative; bottom: 51px; left: 13.5%">
+      <iframe style="height: 100vh" frameborder="0" scrolling="no" src="http://twitch.tv/<%= params[:channel] %>/chat?popout=" width="325">
+      </iframe>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+

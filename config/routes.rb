@@ -1,10 +1,17 @@
 Rails.application.routes.draw do
+  resources :providers
+  resources :streams
+  resources :rooms
+  resources :users
+
+  post 'stream_search', to: 'streams#search'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-
+  get '' => 'application#home'
+  get 'twitch/:channel' => 'application#twitch'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

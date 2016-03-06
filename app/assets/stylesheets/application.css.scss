@@ -3,7 +3,7 @@
  * listed below.
  *
  * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
  *
  * You're free to add application-wide styles to this file and they'll appear at the bottom of the
  * compiled file so the styles you add here take precedence over styles defined in any styles
@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+body, html {height:100%;}
+body {overflow: hidden; }
+div.wrap {height:100%; overflow:hidden;}
+.navbar-nav .navbar-brand {
+  padding-top:15px !important;
+  padding-bottom:5px;
+  height: 20px;
+}
+
+.navbar .navbar .nav.pull-left {margin-left: 5px; margin-right: 0;}
+.navbar .navbar .navbar-brand{ padding: 0px 12px;font-size: 16px;line-height: 28px; }
+.navbar {min-height:28px !important;}
