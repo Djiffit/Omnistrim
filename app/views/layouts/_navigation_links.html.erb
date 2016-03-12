@@ -1,6 +1,6 @@
 <%# add navigation links to this file %>
-<li><%= link_to 'Users', users_path, class: 'navbar-brand'  %></li>
-
+<li><%= link_to 'Omnistrim', root_path, class: 'navbar-brand'  %></li>
+<li><h4><%= session[:name] if session[:name] %></h4></li>
 <% if 1 == 2%>
     <li role="presentation" class="dropdown">
       <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">

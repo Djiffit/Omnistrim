@@ -1,0 +1,18 @@
+<br><br>
+<h1 align="center">Log in using your credentials</h1>
+<br><br><br>
+<%= form_tag 'signin', method: :post do %>
+    <div class="col-sm-20">
+      <div class="col-sm-8">
+        <label>Username</label> <input type="text" class="form-control" placeholder="Enter username" <%= text_field_tag :username, params[:username] %>
+        <br></div>
+    </div>
+    <div class="col-sm-8">
+      <label>Password</label> <input type="password" class="form-control" placeholder="Enter password" <%= password_field_tag :password, params[:password] %>
+      <br></div>
+    <div class="col-sm-8">
+      <br>
+      <%= submit_tag "Log in" %>
+    </div>
+<% end %>
+

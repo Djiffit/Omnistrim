@@ -3,6 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/omnistrim.iml" filepath="$PROJECT_DIR$/.idea/omnistrim.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../omnistrimchattest/.idea/omnistrimchattest.iml" filepath="$PROJECT_DIR$/../omnistrimchattest/.idea/omnistrimchattest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../pusher chat test/pusher/.idea/pusher.iml" filepath="$PROJECT_DIR$/../pusher chat test/pusher/.idea/pusher.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../pusher chat test/pusher-realtime-chat-example/.idea/pusher-realtime-chat-example.iml" filepath="$PROJECT_DIR$/../pusher chat test/pusher-realtime-chat-example/.idea/pusher-realtime-chat-example.iml" />
       <module fileurl="file://$PROJECT_DIR$/../ratebeer/.idea/ratebeer.iml" filepath="$PROJECT_DIR$/../ratebeer/.idea/ratebeer.iml" />
     </modules>
   </component>

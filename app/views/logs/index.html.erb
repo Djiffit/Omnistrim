@@ -1,0 +1,6 @@
+<br><br><br>
+<h1>LIST OF ALL USERS</h1>
+<h3>Click on name to view logs</h3>
+<% @users.each do |user| %>
+  <%= link_to user.name, +user.name %>
+<% end %>

@@ -1,76 +1,28 @@
 class StreamsController < ApplicationController
   before_action :set_stream, only: [:show, :edit, :update, :destroy]
 
-  # GET /streams
-  # GET /streams.json
+
+  def twitch
+    @provider = 'twitch'
+    @messages = Message.last(20)
+    render 'show'
+  end
+
   def index
     @streams = Stream.all
   end
 
-  # GET /streams/1
-  # GET /streams/1.json
-  def show
-  end
-
-  def search
-    if Stream.all.where(name:params[:channel]).where(provider:params[:provider])
-      redirect_to ("/" + params[:provider] + "/" + params[:channel])
-      return
-    else
-      stream = Stream.create(channel:params[:channel], provider:params[:provider])
-      stream.channel = params[:channel]
-      stream.provider = params[:provider]
-      redirect_to ("" + params[:provider] + "/" + params[:channel])
-    end
-
-  end
-
-  # GET /streams/new
-  def new
-    @stream = Stream.new
-  end
-
-  # GET /streams/1/edit
-  def edit
-  end
-
-  # POST /streams
-  # POST /streams.json
   def create
     @stream = Stream.new(stream_params)
 
     respond_to do |format|
       if @stream.save
-        format.html { redirect_to ""+params[:provider]+"/"+params[:channel], notice: 'Stream was successfully created.' }
+        format.html { redirect_to @stream, notice: 'Stream was successfully created.' }
         format.json { render :show, status: :created, location: @stream }
       else
         format.html { render :new }
         format.json { render json: @stream.errors, status: :unprocessable_entity }
       end
-    end
-  end
-
-  # PATCH/PUT /streams/1
-  # PATCH/PUT /streams/1.json
-  def update
-    respond_to do |format|
-      if @stream.update(stream_params)
-        format.html { redirect_to @stream, notice: 'Stream was successfully updated.' }
-        format.json { render :show, status: :ok, location: @stream }
-      else
-        format.html { render :edit }
-        format.json { render json: @stream.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /streams/1
-  # DELETE /streams/1.json
-  def destroy
-    @stream.destroy
-    respond_to do |format|
-      format.html { redirect_to streams_url, notice: 'Stream was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 
@@ -82,6 +34,6 @@ class StreamsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def stream_params
-      params.require(:stream).permit(:provider, :channel)
+      params.require(:stream).permit(:name, :provider)
     end
 end

@@ -1,6 +1,5 @@
 <%# navigation styled for Bootstrap 3.0 %>
 <nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="sr-only">Toggle navigation</span>
@@ -14,46 +13,9 @@
       <ul class="nav navbar-nav">
         <%= render 'layouts/navigation_links' %>
       </ul>
-      <div class="navbar-header navbar-right">
-        <div class="navbar-form pull-right navbar input-group">
-          <%= form_tag stream_search_path, :method => :post do %>
-              <%= text_field_tag :channel, params[:channel], placeholder: "Channel name", class: 'form-control' %>
-              <select name="provider" class="form-control">
-
-                <option value="twitch">Twitch</option>
-
-                <option value="twitch-vod">Twitch VOD</option>
-
-                <option value="ustream">Ustream</option>
-
-                <option value="hitbox">hitbox</option>
-
-                <option value="azubu">Azubu</option>
-
-                <option value="vaughn">VaughnLive</option>
-
-                <option value="riven">Riven - Destiny VOD</option>
-
-                <option value="castamp">CastAMP</option>
-
-                <option value="nsfw-chaturbate">Chaturbate (NSFW)</option>
-
-                <option value="youtube">YouTube</option>
-
-                <option value="youtube-playlist">YouTube (Playlist)</option>
-
-                <option value="mlg">MLG</option>
-
-                <option value="dailymotion">Dailymotion</option>
-
-                <option value="advanced">Advanced</option>
-              </select>
-              <span class="input-group-btn">
-        <%= submit_tag "Go", class: 'btn btn-default' %>
-      </span>
-          <% end %>
-        </div>
-      </div>
+      <ul class="nav nav-tabs pull-right">
+        <li><a data-toggle="tab" href="#omnichat">Omnistrim chat</a></li>
+        <li><a data-toggle="tab" href="#chanchat">Channel chat</a></li>
+      </ul>
     </div>
-  </div>
 </nav>

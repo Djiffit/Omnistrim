@@ -1,1 +1,1 @@
-json.extract! @stream, :id, :provider, :channel, :created_at, :updated_at
+json.extract! @stream, :id, :name, :provider, :created_at, :updated_at
