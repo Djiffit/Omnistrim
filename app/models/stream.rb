@@ -1,2 +1,3 @@
-class Stream < ApplicationRecord
+class Stream < ActiveRecord::Base
+
 end
