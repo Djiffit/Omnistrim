@@ -13,7 +13,8 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
+.navbar-nav > li > a {padding-top:10px !important; padding-bottom:10px !important;}
+.navbar {min-height:20px !important}
 .nav-tabs{
     background-color: #1c1c1c;
 }
