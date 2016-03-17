@@ -5,11 +5,11 @@
   <div id="content-wrap" style="float:right; width:300px;">
     <div class="tab-content">
       <div id="omnichat" class="tab-pane fade in active">
-        <%= render 'omnichat', messages: @messages %>
+        <%= render 'streams/omnichat', messages: @messages %>
       </div>
-      <div id="chanchat" class="tab-pane fade in active">
-        <%= render 'twitchchat' %>
-      </div>
+
     </div>
   </div>
 </div>
+
+<%= subscribe_to "/messages/new" %>

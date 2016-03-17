@@ -12,12 +12,10 @@
     </div>
     <div class="panel-footer" id="footer-of-panel">
       <div class="input-group">
-        <input data-behavior ="room-speaker" id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." />
-        <input hidden data-behavior="name-speaker" id="nimi" value="<%= session[:name] %>" type="text">
-        <span class="input-group-btn">
-                            <button class="btn btn-default btn-sm" id="btn-chat">
-                              Send</button>
-                        </span>
+        <%= form_for Message.new, remote: true do |f| %>
+            <%= f.text_field :content %>
+            <%= f.submit "Send" %>
+        <% end %>
       </div>
     </div>
   </div>
