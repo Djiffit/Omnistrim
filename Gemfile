@@ -24,7 +24,7 @@ group :assets do
 end
 gem 'httparty'
 gem 'byebug'
-
+gem 'nifty-generators'
 gem 'jquery-rails'
 gem 'foreman'
 gem 'private_pub'

@@ -1,0 +1,12 @@
+<div clas="container" style="position: relative; left: 5%; width: 90%;">
+  <div class="row">
+    <% @search.map do |s| %>
+        <div class="col-md-3" style="height: 300px;">
+          <a href=<%= 'twitch/'+s['channel']['display_name'] %> class="thumbnail" style="background-color: transparent; border-color: transparent;">
+            <p><%= s['channel']['display_name']%> playing <%= s['channel']['game'] %> for <%= s['viewers'] %> viewers</p>
+            <img src="<%= s['preview']['large'] %>"  style="">
+          </a>
+        </div>
+    <% end %>
+  </div>
+</div>

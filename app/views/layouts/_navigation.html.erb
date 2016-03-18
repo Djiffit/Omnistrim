@@ -13,10 +13,10 @@
     <ul class="nav navbar-nav">
       <%= render 'layouts/navigation_links' %>
     </ul>
-    <ul class="nav nav-tabs pull-right">
-      <li><a data-toggle="tab" href="#omnichat">Omnistrim chat</a></li>
-      <li><a data-toggle="tab" href="#chanchat">Channel chat</a></li>
-    </ul>
+    <!--<ul class="nav nav-tabs pull-right">-->
+      <!--<li><a data-toggle="tab" href="#omnichat">Omnistrim chat</a></li>-->
+      <!--<li><a data-toggle="tab" href="#chanchat">Channel chat</a></li>-->
+    <!--</ul>-->
     <div class="navbar-header navbar-right">
       <div class="navbar-form pull-right navbar input-group">
         <%= form_tag stream_search_path, :method => :post do %>
@@ -26,7 +26,7 @@
               <option value="twitch-vod">Twitch VOD</option>
               <option value="ustream">Ustream</option>
             </select>
-            <span class="input-group-btn"><%= submit_tag "Go", class: 'btn btn-default' %></span>
+            <span class="input-group-btn"><%= submit_tag "Find", class: 'btn btn-default' %></span>
         <% end %>
 
       </div></div></div>

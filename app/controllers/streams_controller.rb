@@ -11,7 +11,10 @@ class StreamsController < ApplicationController
     if (params[:provider] == 'twitch')
       params[:stream] = HTTParty.get "https://api.twitch.tv/kraken/streams/"+ERB::Util.url_encode(params[:name])
       if (params[:stream]["error"] || params[:stream][:stream].nil?)
-        @search = (HTTParty.get ('https://api.twitch.tv/kraken/search/streams?limit=100&q='+ERB::Util.url_encode(params[:name]))).parsed_response["streams"]
+        @search = (HTTParty.get ('https://api.twitch.tv/kraken/search/streams?limit=200&q='+ERB::Util.url_encode(params[:name]))).parsed_response["streams"]
+        if (@search.count == 0)
+          @top = (HTTParty.get ('https://api.twitch.tv/kraken/streams/'))['streams']
+        end
         render 'streams/search'
         return
       end

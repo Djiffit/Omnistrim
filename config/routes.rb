@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :streams
   resources :messages
   resources :users
-  root to: 'rooms#show'
+  root to: 'application#home'
   get 'logs/:name', to: 'logs#show'
   get 'logs', to: 'logs#index'
   get 'signup', to: 'users#new'
