@@ -11,8 +11,9 @@
   <header>
     <%= render 'layouts/navigation' %>
   </header>
-
   <body>
+
     <%= yield %>
+    <%= subscribe_to "/messages/new" %>
   </body>
 </html>

@@ -7,8 +7,16 @@ class StreamsController < ApplicationController
     @messages = Message.last(20)
   end
 
-  def search
-
+  def find
+    if (params[:provider] == 'twitch')
+      params[:stream] = HTTParty.get "https://api.twitch.tv/kraken/streams/"+ERB::Util.url_encode(params[:name])
+      if (params[:stream]["error"] || params[:stream][:stream].nil?)
+        @search = (HTTParty.get ('https://api.twitch.tv/kraken/search/streams?limit=100&q='+ERB::Util.url_encode(params[:name]))).parsed_response["streams"]
+        render 'streams/search'
+        return
+      end
+      redirect_to('/'+params[:provider]+'/'+params[:name])
+    end
   end
 
   def index

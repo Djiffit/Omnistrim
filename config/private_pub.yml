@@ -1,10 +1,10 @@
 development:
   server: "http://omnistrimfaye.herokuapp.com/faye"
-  secret_token: "batkaro"
+  secret_token: "omnistrim"
 test:
   server: "http://localhost:9292/faye"
   secret_token: "secret"
 production:
   server: "http://omnistrimfaye.herokuapp.com/faye"
-  secret_token: "batkaro"
-  signature_expiration: 40000 # one hour
+  secret_token: "omnistrim"
+  signature_expiration: 7200 # one hour

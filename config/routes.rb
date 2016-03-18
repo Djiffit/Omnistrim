@@ -8,6 +8,6 @@ Rails.application.routes.draw do
   get 'signup', to: 'users#new'
   get 'signin', to: 'session#new'
   post 'signin', to: 'session#create'
-  post 'stream_search', to: 'streams#show'
+  post 'stream_search', to: 'streams#find'
   get ':provider/:name', to: 'streams#show'
 end

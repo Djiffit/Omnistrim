@@ -13,8 +13,15 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
-.navbar-nav > li > a {padding-top:10px !important; padding-bottom:10px !important;}
-.navbar {min-height:20px !important}
+
+.navbar-nav > li > a {
+  padding-top:10px !important; padding-bottom:10px !important;
+}
+
+.navbar {
+  min-height:20px !important
+}
+
 .nav-tabs{
     background-color: #1c1c1c;
 }
@@ -33,13 +40,10 @@
     border-radius: 0;
     color: #474747;
 }
-html, body {
+body {
     max-width: 100%;
     overflow-x: hidden;
     overflow-y: hidden;
-}
-
-body {
     background: #000000 !important;
 }
 
