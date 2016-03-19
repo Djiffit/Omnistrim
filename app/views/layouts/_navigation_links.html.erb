@@ -1,15 +1,18 @@
 <%# add navigation links to this file %>
-<li style="position: relative; top: 5px"><%= link_to 'Omnistrim', root_path, class: 'navbar-brand'  %></li>
-<li><h4><%= session[:name] if session[:name] %></h4></li>
-<% if 1 == 2%>
+<li style="padding-right: 30px"><%= link_to 'Omnistrim', root_path, class: 'navbar-brand'  %></li>
+<li><%= link_to 'Chat logs', logs_path %></li>
+<% if current_user %>
     <li role="presentation" class="dropdown">
       <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-        <%= 'current_user.username'%> <span class="caret"></span>
+        <%= current_user.name %> <span class="caret"></span>
       </a>
       <ul class="dropdown-menu">
-        <li><%= link_to 'My page', root_path%></li>
+        <li><%= link_to 'My page', user_path(current_user) %></li>
+        <li><%= link_to 'Log out', '/signout' %></li>
       </ul>
     </li>
 
 <% else %>
+    <li><%= link_to 'Sign in', signin_url %></li>
+    <li><%= link_to 'Sign up', signup_url %></li>
 <% end %>

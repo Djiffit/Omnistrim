@@ -1,4 +1,4 @@
 
 <div class="message">
-  <li><span class="created_at"><%= message.created_at.strftime("%H:%M") %></span> <%= 'message.name' %>: <%= message.content %>
+  <li><span class="created_at"><%= message.created_at.strftime("%H:%M") %></span> <%= User.find(message.user_id).name %>: <%= message.content %>
   </li></div>

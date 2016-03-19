@@ -8,6 +8,7 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
   </head>
+
   <header>
     <%= render 'layouts/navigation' %>
   </header>
@@ -16,4 +17,5 @@
     <%= yield %>
     <%= subscribe_to "/messages/new" %>
   </body>
+  <%= render 'layouts/messages' %>
 </html>

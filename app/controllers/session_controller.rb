@@ -5,9 +5,17 @@ class SessionController < ApplicationController
   end
 
   def create
-    if User.find_by(name:params[:username])
-      session[:name] = params[:username]
+    @user = User.find_by(name:params[:username])
+    if @user && @user.authenticate(params[:password])
+      session[:user] = @user.id
+      redirect_to user_path(@user)
+    else
+      redirect_to :back, notice: "Username and password do not match!"
     end
-    redirect_to root_path
+  end
+
+  def destroy
+    session[:user] = nil
+    redirect_to root_path, notice: "Successfully logged out!"
   end
 end

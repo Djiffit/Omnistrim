@@ -1,0 +1,15 @@
+<body style="overflow-y: scroll !important" >
+<br><br>
+<h3 style="padding-left: 3%">Chat logs of <%= @user.name if @user%></h3>
+<div class="logs" style="padding-left:5%; width: 90%;">
+  <ul class="chat">
+    <% @messages.each do |mes| %>
+        <div class="message">
+          <li>
+            <%= mes.created_at %> <b><%= mes.user.name %></b>: <%= mes.content %>
+          </li>
+        </div>
+    <% end %>
+  </ul>
+</div>
+</body>

@@ -1,10 +1,10 @@
 <body style="overflow-y: auto">
 <div>
-  <div id="leftside" style="width:calc(100% - 290px); float:left; position: absolute">
+  <div id="leftside" style="width:calc(100% - 290px); float:left; position: absolute; padding-top: -5px">
     <br><br><br>
     <ul class="horizontal-slide" style="overflow-x: scroll">
       <% @streams.map do |s| %>
-          <% if (s['channel']['game'] != 'Overwatch' && s['channel']['game'] != 'Dota 2' && s['channel']['game'] != 'Counter-Strike: Global Offensive'  && s['channel']['game'] != 'League of Legends') %>
+          <% if (s['channel']['game'] != 'Overwatch' && s['channel']['game'] != 'StarCraft II' && s['channel']['game'] != 'Heroes of the Storm' && s['channel']['game'] != 'Dota 2' && s['channel']['game'] != 'Counter-Strike: Global Offensive'  && s['channel']['game'] != 'League of Legends') %>
               <li class="span2">
                 <small style="padding-left: 5px; color:#777777"><%= s['channel']['display_name'] %> - <%= s['viewers'] %> viewers</small>
                 <a href="<%= 'twitch/'+s['channel']['display_name'] %>" class="thumbnail" style="width: 320px; height: 180px;  border-color: transparent;
@@ -42,7 +42,7 @@
     </ul>
     <ul class="horizontal-slide" style="">
       <% @streams.map do |s| %>
-          <% if s['channel']['game'] == 'Overwatch' %>
+          <% if s['channel']['game'] == 'Overwatch' || s['channel']['game'] == 'StarCraft II' || s['channel']['game'] == 'Heroes of the Storm' %>
               <li class="span2">
                 <small style="padding-left: 5px; color:#777777"><%= s['channel']['display_name'] %> - <%= s['viewers'] %> viewers</small>
                 <a href="<%= 'twitch/'+s['channel']['display_name'] %>" class="thumbnail" style="width: 320px; height: 180px;  border-color: transparent;

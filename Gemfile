@@ -13,7 +13,7 @@ end
 
 gem 'faye'
 gem 'bootstrap-sass'
-
+gem 'bcrypt'
 gem 'sass-rails'
 
 # Gems used only for assets and not required
@@ -24,6 +24,7 @@ group :assets do
 end
 gem 'httparty'
 gem 'byebug'
+gem 'bootstrap_forms'
 gem 'nifty-generators'
 gem 'jquery-rails'
 gem 'foreman'

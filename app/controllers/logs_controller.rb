@@ -8,7 +8,7 @@ class LogsController < ApplicationController
       @messages = Message.all
     else
       @user = User.find_by(name:params[:name])
-      @messages = Message.all.where(name:params[:name])
+      @messages = Message.all.where(user:@user)
     end
   end
 end

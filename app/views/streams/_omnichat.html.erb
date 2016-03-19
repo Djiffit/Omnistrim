@@ -11,14 +11,23 @@
       </ul>
     </div>
     <div class="panel-footer" id="footer-of-panel">
-      <%= form_for Message.new, remote: true do |f| %>
-          <div class="input-group">
-            <%= f.text_field :content, class:"form-control" %>
-            <span class="input-group-btn">
+      <% if current_user %>
+          <div class="chatInput">
+            <%= form_for Message.new, remote: true do |f| %>
+                <div class="input-group">
+                  <%= f.text_field :content, class:"form-control", autocomplete:"off"%>
+                  <span class="input-group-btn">
             <%= f.submit "Send", class:"btn btn-default" %>
               </span>
+                </div>
+            <% end %>
+          </div>
+      <% else %>
+          <a href="signin"><button class="btn btn-primary btn-xs">Sign in to chat</button></a>
+          <a href="signup"><button class="btn btn-danger btn-xs" style="float:right">Or create a new account</button><a/>
+          </div>
       <% end %>
       </div>
-    </div>
-  </div>
 </div>
+</div>
+

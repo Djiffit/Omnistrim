@@ -9,8 +9,8 @@
  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
- *
  */
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
@@ -22,61 +22,94 @@
   min-height:20px !important
 }
 
+.navbar-nav > li {
+ position: relative; top: 5px
+}
+
 .nav-tabs{
-    background-color: #1c1c1c;
+  background-color: #1c1c1c;
 }
 
 .tab-content{
-    background-color:#303136;
-    color: rgba(150, 150, 150, 0.58);
-    padding:5px
+  background-color:#303136;
+  color: rgba(150, 150, 150, 0.58);
+  padding:5px
 }
 .nav-tabs > li > a{
-    border: medium none;
+  border: medium none;
 }
 .nav-tabs > li > a:hover{
-    background-color: #303136 !important;
-    border: medium none;
-    border-radius: 0;
-    color: #474747;
+  background-color: #303136 !important;
+  border: medium none;
+  border-radius: 0;
+  color: #474747;
 }
 body {
-    max-width: 100%;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    background: #000000 !important;
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  background: #000000 !important;
+}
+
+.panel > .panel-heading {
+  background-color: #555555;
+  color: white;
+  border-color: #000000;
+}
+.panel {
+  border-color: #000000;
 }
 
 .panel-body  {
-    font-family: "ubuntu light";
-    font-size: small;
-    overflow-x: hidden;
-    word-break: keep-all;
+  background-color: #1c1c1c;
+  font-family: "ubuntu";
+  font-size: 90%;
+  overflow-x: hidden;
+  word-break: keep-all;
+  border-color: #1c1c1c;
+}
+.panel-footer  {
+  background-color: #555555;
+  font-family: "ubuntu";
+  font-size: 90%;
+  overflow-x: hidden;
+  word-break: keep-all;
+  border-color: rgba(43, 43, 43, 0.89);
 }
 .chat
 {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .chat li
 {
-    margin-bottom: 7px;
-    padding-bottom: 5px;
-    border-bottom: 1px dotted #B3A9A5;
+  margin-bottom: 7px;
+  padding-bottom: 7px;
 }
 
+.alert {
+  align: center;
+  position: absolute;
+  left:30%;
+  right:30%;
+  top: 80px;
+  width:auto;
+}
 
 .chat li
 {
-    margin: 0;
-    color: rgba(57, 7, 10, 0.82);
+  margin: 0;
+  color: lightslategrey;
 }
-
+.chatInput form {
+  AutoComplete:"off";
+  autocomplete:"off";
+}
 .panel .slidedown .glyphicon, .chat .glyphicon
 {
-    margin-right: 5px;
+  margin-right: 5px;
 }
 .modal {
   position: absolute;
@@ -84,26 +117,26 @@ body {
 
 .panel-body
 {
-    overflow-y: scroll;
-    height: calc(100vh - 150px);
+  overflow-y: scroll;
+  height: calc(100vh - 150px);
 }
 
 ::-webkit-scrollbar-track
 {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-    background-color: #F5F5F5;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: #F5F5F5;
 }
 
 ::-webkit-scrollbar
 {
-    width: 6px;
-    background-color: #F5F5F5;
+  width: 6px;
+  background-color: #F5F5F5;
 }
 
 ::-webkit-scrollbar-thumb
 {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-    background-color: #555;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: #555;
 }
 
 ul.horizontal-slide {

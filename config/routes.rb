@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get 'logs/:name', to: 'logs#show'
   get 'logs', to: 'logs#index'
   get 'signup', to: 'users#new'
+  post 'signup', to: 'users#create'
+  get 'signout', to: 'session#destroy'
   get 'signin', to: 'session#new'
   post 'signin', to: 'session#create'
   post 'stream_search', to: 'streams#find'
