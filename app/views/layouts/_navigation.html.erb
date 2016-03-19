@@ -18,15 +18,17 @@
     <!--<li><a data-toggle="tab" href="#chanchat">Channel chat</a></li>-->
     <!--</ul>-->
     <div class="navbar-header navbar-right">
-      <div class="navbar-form pull-right navbar input-group">
+      <div class="navbar-form pull-right">
         <%= form_tag stream_search_path, :method => :post do %>
-            <%= text_field_tag :name, params[:name], placeholder: "Channel name", class: 'form-control' %>
-            <select name="provider" class="form-control">
-              <option value="twitch">Twitch</option>
-              <option value="twitch-vod">Twitch VOD</option>
-              <option value="ustream">Ustream</option>
-            </select>
-            <span class="input-group-btn"><%= submit_tag "Go!", class: 'btn btn-default' %></span>
+            <%= text_field_tag :name, params[:name], placeholder: "Channel name", class: 'form-control', style:'position:absolute; right:182px; top:9px'%>
+            <div class="navbar input-group" >
+              <select name="provider" class="form-control">
+                <option value="twitch">Twitch</option>
+                <option value="twitch-vod">Twitch VOD</option>
+                <option value="ustream">Ustream</option>
+              </select>
+              <span class="input-group-btn"><%= submit_tag "Go!", class: 'btn btn-default' %></span>
+            </div>
         <% end %>
 
       </div>

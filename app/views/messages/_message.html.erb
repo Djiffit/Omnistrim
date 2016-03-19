@@ -1,4 +1,6 @@
 
 <div class="message">
-  <li><span class="created_at"><%= message.created_at.strftime("%H:%M") %></span> <%= User.find(message.user_id).name %>: <%= message.content %>
+  <li><span class="created_at">
+    <!--<%= message.created_at.strftime("%H:%M") %>-->
+  </span> <a target="_blank" href="<%= user_path(message.user) %>"><b style="color:cornflowerblue"><%= message.user.name %></a></b>: <%= message.content %>
   </li></div>

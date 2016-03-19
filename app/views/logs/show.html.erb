@@ -1,6 +1,6 @@
 <body style="overflow-y: scroll !important" >
 <br><br>
-<h3 style="padding-left: 3%">Chat logs of <%= @user.name if @user%></h3>
+<h3 style="padding-left: 3%">Chat logs of <%= (link_to @user.name, user_path(@user)) if @user%></h3>
 <div class="logs" style="padding-left:5%; width: 90%;">
   <ul class="chat">
     <% @messages.each do |mes| %>

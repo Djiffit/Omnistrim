@@ -6,3 +6,4 @@
 | 16.3 | Jaa se ei toiminutkaan herokussa, jossain ongelma ja uuden chat toteutuksen tutkiminen      |  5h |
 | 17.3 | Uusi chat toteutus private pub gemillä, tietokannoissa toimiva hakutoiminnallisuus | 6h |
 | 18.3 | Twitch api:a käyttävä hakutoiminnallisuus, etusivun luominen ja ulkoasun parantaminen      | 6h |
+| 19.3 | Chatin ulkoasun parantaminen, viestien linkitys käyttäjiin, Ustream kanavan avaaminen, kirjautuminen ja rekisteröityminen     | 5h |

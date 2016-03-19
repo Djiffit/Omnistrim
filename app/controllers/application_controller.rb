@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 
   def home
     @streams = (HTTParty.get 'https://api.twitch.tv/kraken/streams?limit=200')['streams']
-    @messages = Message.last(20)
+    @messages = Message.last(10)
     render 'layouts/home'
   end
 end

@@ -1,13 +1,18 @@
 <div id="main-wrap">
-  <div id="sidebar" style="float:left; width:calc(100% - 300px); padding-top:50px">
-    <%= render 'streams/twitchstream' %>
+  <div id="sidebar" style="float:left; width:calc(100% - 300px); padding-top:48px">
+    <% if @provider == 'twitch' %>
+        <%= render 'streams/twitchstream' %>
+    <% else %>
+        <div class="ustream" style="width:calc(100% - 300px)">
+        <%= @stream["html"].html_safe %>
+        </div>
+    <% end %>
   </div>
   <div id="content-wrap" style="float:right; width:300px;">
     <div class="tab-content">
       <div id="omnichat" class="tab-pane fade in active">
-        <%= render 'streams/twitchchat', messages: @messages %>
+        <%= render 'streams/omnichat', messages: @messages %>
       </div>
-
     </div>
   </div>
 </div>

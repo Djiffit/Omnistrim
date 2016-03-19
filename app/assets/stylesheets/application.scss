@@ -19,7 +19,8 @@
 }
 
 .navbar {
-  min-height:20px !important
+  min-height:20px !important;
+  max-height: 51px;
 }
 
 .navbar-nav > li {
@@ -97,7 +98,10 @@ body {
   top: 80px;
   width:auto;
 }
-
+.ustream > iframe {
+  width:calc(100vw - 300px);
+  height:calc(100vh - 20px);
+}
 .chat li
 {
   margin: 0;

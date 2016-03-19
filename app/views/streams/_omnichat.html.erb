@@ -1,9 +1,9 @@
 <div class="container">
-  <div class="panel panel-default" style="width: 278px; padding-top: 48px">
+  <div class="panel panel-default" style="width: 278px; padding-top: 45px">
     <div class="panel-heading">
       <span class="glyphicon glyphicon-comment"></span> Chatroom
     </div>
-    <div class="panel-body">
+    <div id="panelchat" class="panel-body">
       <ul class="chat">
         <div id="messages">
           <%= render @messages %>
@@ -24,7 +24,7 @@
           </div>
       <% else %>
           <a href="signin"><button class="btn btn-primary btn-xs">Sign in to chat</button></a>
-          <a href="signup"><button class="btn btn-danger btn-xs" style="float:right">Or create a new account</button><a/>
+          <a href="signup"><button class="btn btn-danger btn-xs" style="float:right">Or create a new account</button></a>
           </div>
       <% end %>
       </div>

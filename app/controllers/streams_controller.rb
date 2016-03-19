@@ -4,7 +4,14 @@ class StreamsController < ApplicationController
 
   def show
     @provider = params[:provider]
-    @messages = Message.last(20)
+    @messages = Message.last(10)
+    if (@provider == 'ustream')
+      @stream = (HTTParty.get ('http://api.embedly.com/1/oembed?url=ustream.tv/'+params[:name]+'&width=1600&autoplay=true&height=900&key=:08c367084bc646d9930486f5b88d53c6'))
+      if (@stream["error"])
+        redirect_to root_path, notice: "Channel not found!"
+        return
+      end
+    end
   end
 
   def find
@@ -18,8 +25,8 @@ class StreamsController < ApplicationController
         render 'streams/search'
         return
       end
-      redirect_to('/'+params[:provider]+'/'+params[:name])
     end
+    redirect_to('/'+params[:provider]+'/'+params[:name])
   end
 
   def index

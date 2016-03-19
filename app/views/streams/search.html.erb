@@ -1,7 +1,7 @@
 <br><br>
 <body style="overflow-y: scroll !important;">
 <% if @search.count == 0 %>
-    <h2 style="padding-left: 25px;">Your search found no results :(</h2>
+    <h2 style="padding-left: 25px;">Your search found no live streams :(</h2>
     <% @search = @top %>
     <%= render 'streams/streams', search: @search %>
 <% else %>
