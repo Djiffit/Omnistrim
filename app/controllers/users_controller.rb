@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     @user = User.new(name: params[:username], password: params[:password], password_confirmation: params[:password_confirmation])
     respond_to do |format|
       if @user.save
+        session[:user] = @user.id
         format.html { redirect_to @user, notice: 'User was successfully created!' }
         format.json { render :show, status: :created, location: @user }
       else

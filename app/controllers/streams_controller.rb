@@ -12,6 +12,9 @@ class StreamsController < ApplicationController
         return
       end
     end
+    if Stream.find_by(name:params[:name], provider:params[:provider]).nil?
+      Stream.create(name:params[:name], provider:params[:provider])
+    end
   end
 
   def find
