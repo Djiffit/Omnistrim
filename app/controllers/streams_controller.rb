@@ -13,7 +13,19 @@ class StreamsController < ApplicationController
       end
     end
     if Stream.find_by(name:params[:name], provider:params[:provider]).nil?
-      Stream.create(name:params[:name], provider:params[:provider])
+      stream = Stream.create(name:params[:name], provider:params[:provider])
+      if (@provider == 'twitch')
+        stream.icon = (HTTParty.get ('https://api.twitch.tv/kraken/streams/'+params[:name]))['stream']['channel']['logo']
+        stream.save
+      end
+      if (@provider == 'ustream')
+        stream.icon = @stream['thumbnail_url']
+        stream.save
+      end
+      if (@provider == 'azubu')
+        stream.icon = (HTTParty.get('http://api.azubu.tv/public/channel/'+params[:name]))['data']['user']['url_photo_large']
+        stream.save
+      end
     end
   end
 
@@ -52,13 +64,13 @@ class StreamsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_stream
-      @stream = Stream.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_stream
+    @stream = Stream.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def stream_params
-      params.require(:stream).permit(:name, :provider)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def stream_params
+    params.require(:stream).permit(:name, :provider)
+  end
 end

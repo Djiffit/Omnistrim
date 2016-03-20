@@ -11,8 +11,20 @@
         <li><%= link_to 'Log out', '/signout' %></li>
 
       </ul>
-    <li style="padding-top: 8px; padding-left: 12px;"><button class="btn btn-success btn-xs">Favorite</button></li>
-    </li>
+    <li style="padding-top: 8px; padding-left: 12px;"><% if params[:name] && params[:provider] && !Favorite.find_by(user_id: current_user.id, stream:Stream.find_by(name:params[:name], provider:params[:provider]))%>
+          <!--// IMPROVE THIS-->
+          <div class="favoritebutton">
+            <%= form_tag '/favorites/create', remote: true %>
+            <input type="hidden" name="service" value="<%= @provider %>">
+            <input type="hidden" name="channel" value="<%= params[:name] %>">
+            <input type="submit" value="Favorite" class="btn btn-success btn-xs">
+            </form>
+          </div>
+      <% end %>
+      <li>
+        <!--<li style="padding-top: 8px; padding-left: 12px;"><button class="btn btn-success btn-xs" formmethod="post" remote="true">Favorite</button></li>-->
+      </li>
+
 
 <% else %>
     <li><%= link_to 'Sign in', signin_url %></li>

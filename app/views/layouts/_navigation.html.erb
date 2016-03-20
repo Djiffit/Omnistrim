@@ -19,7 +19,7 @@
     <!--</ul>-->
     <div class="navbar-header navbar-right">
       <div class="navbar-form pull-right">
-        <%= form_tag stream_search_path, :method => :post do %>
+        <%= form_tag stream_search_path, id: 'lol', :method => :post do %>
             <%= text_field_tag :name, params[:name], placeholder: "Channel name", class: 'form-control', style:'position:absolute; right:182px; top:9px'%>
             <div class="navbar input-group" >
               <select name="provider" class="form-control">
@@ -27,7 +27,8 @@
                 <option value="azubu">Azubu</option>
                 <option value="ustream">Ustream</option>
               </select>
-              <span class="input-group-btn"><%= submit_tag "Go!", class: 'btn btn-default' %></span>
+              <span class="input-group-btn">
+                <%= submit_tag "Go!", class: 'btn btn-default', id: 'lol' %></span>
             </div>
         <% end %>
 
