@@ -1,10 +1,20 @@
-<body style="overflow-y: scroll !important;">
+
 <br><br>
-<h3><%= @user.name %></h3>
-<% @favorites.each do |f| %>
-     <a href="/<%= f.stream.provider + '/'+ f.stream.name %>"><img src="<%= f.stream.icon %>"style="height: 300px; width: 300px;" ></img></a>  
+<h3 style="padding-left: 5%;"><%= @user.name %></h3>
+<% if @favorites.count > 0 %>
+    <ul class="horizontal-slide" style=" height: 350px; width: calc(100vw - 390px)">
+      <% @favorites.each do |f| %>
+          <li class="span2">
+            <small style="padding-left: 5px; color:#777777"><%= f.stream.name %></small>
+            <a href="<%= '/'+f.stream.provider+'/'+f.stream.name %>" class="thumbnail" style="width: 320px; height: 180px;  border-color: transparent;
+                background-color: transparent;">
+              <img src="<%= f.stream.icon %>" alt="" />
+            </a>
+          </li>
+      <% end %>
+    </ul>
 <% end %>
-<div class="container" style="float: right; position: absolute; right: -15px; top: 5px;" >
+<div class="container" style="width: 377px; float: right; position: absolute; right: -15px; top: 5px;" >
   <div class="panel panel-default" style="width: 377px; padding-top: 45px; float: right">
     <div class="panel-heading">
       <span class="glyphicon glyphicon-camera"></span> Recent messages, <a href='/logs/<%= @user.name %>'>see full message history</a>
@@ -20,4 +30,3 @@
     </div>
   </div>
 </div>
-</body>

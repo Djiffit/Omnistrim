@@ -1,7 +1,38 @@
 <br><br><br>
-<div style="padding-left: 5%">
+<body style="background-color: #000000 !important; overflow-y: scroll !important" >
+<div style="padding-left: 5%; width: 90%">
   <h3>Click on name to view logs</h3>
-  <% @users.each do |user| %>
-      <%= link_to user.name, 'logs/'+user.name %>
-  <% end %>
+  <table class="table table-hover table-condensed">
+    <thead>
+    <tr>
+      <th style="width: 12%">
+        Name
+      </th>
+      <th style="width: 7%">
+        Messages
+      </th>
+      <th>
+        Last message
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td> <%= link_to 'All messages', 'logs/all/' %> </td>
+      <td style=" padding-left: 1.5%;"> <%= link_to Message.all.count, 'logs/all/' %> </td>
+      <td> <%= link_to Message.all.last.content, 'logs/all/' %> </td>
+    </tr>
+    <% @users.each do |user| %>
+        <tr>
+          <td> <%= link_to user.name, 'logs/'+user.name %> </td>
+          <td style=" padding-left: 1.5%;"> <%= link_to user.messages.count, 'logs/'+user.name %> </td>
+          <td> <%= link_to user.messages.last.content, 'logs/'+user.name  if !user.messages.last.nil?%> </td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+
+
+
 </div>
+</body>

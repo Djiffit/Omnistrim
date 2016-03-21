@@ -1,6 +1,6 @@
 class LogsController < ApplicationController
   def index
-    @users = User.all
+    @users = User.all.includes(:messages)
   end
 
   def show
