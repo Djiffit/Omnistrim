@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160320152116) do
+ActiveRecord::Schema.define(version: 20160323185347) do
 
   create_table "favorites", force: :cascade do |t|
     t.integer  "user_id"
@@ -40,6 +40,8 @@ ActiveRecord::Schema.define(version: 20160320152116) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "password_digest"
+    t.string   "twitch"
+    t.string   "twitchname"
   end
 
 end

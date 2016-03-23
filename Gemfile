@@ -22,6 +22,7 @@ group :assets do
   gem 'coffee-rails'
   gem 'uglifier'
 end
+gem 'omniauth-oauth2'
 gem 'httparty'
 gem 'byebug'
 gem 'bootstrap_forms'

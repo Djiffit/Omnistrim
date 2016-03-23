@@ -6,7 +6,7 @@ class StreamsController < ApplicationController
     @provider = params[:provider]
     @messages = Message.last(10)
     if (@provider == 'ustream')
-      @stream = (HTTParty.get ('http://api.embedly.com/1/oembed?url=ustream.tv/'+params[:name]+'&width=1600&autoplay=true&height=900&key=:08c367084bc646d9930486f5b88d53c6'))
+      @stream = (HTTParty.get ('http://api.embedly.com/1/oembed?url=ustream.tv/'+params[:name].downcase+'&width=1600&autoplay=true&height=900&key=:08c367084bc646d9930486f5b88d53c6'))
       if (@stream["error"])
         redirect_to root_path, notice: "Channel not found!"
         return
@@ -15,7 +15,7 @@ class StreamsController < ApplicationController
     if Stream.find_by(name:params[:name], provider:params[:provider]).nil?
       stream = Stream.create(name:params[:name], provider:params[:provider])
       if (@provider == 'twitch')
-        stream.icon = (HTTParty.get ('https://api.twitch.tv/kraken/streams/'+params[:name]))['stream']['channel']['logo']
+        stream.icon = (HTTParty.get ('https://api.twitch.tv/kraken/streams/'+params[:name].downcase))['stream']['channel']['logo']
         stream.save
       end
       if (@provider == 'ustream')
@@ -23,7 +23,7 @@ class StreamsController < ApplicationController
         stream.save
       end
       if (@provider == 'azubu')
-        stream.icon = (HTTParty.get('http://api.azubu.tv/public/channel/'+params[:name]))['data']['user']['url_photo_large']
+        stream.icon = (HTTParty.get('http://api.azubu.tv/public/channel/'+params[:name].downcase))['data']['user']['url_photo_large']
         stream.save
       end
     end

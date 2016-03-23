@@ -10,6 +10,9 @@ class ApplicationController < ActionController::Base
   def home
     @streams = (HTTParty.get 'https://api.twitch.tv/kraken/streams?limit=200')['streams']
     @messages = Message.last(10)
+    if current_user && current_user.twitch
+      @follows = (HTTParty.get ('https://api.twitch.tv/kraken/streams/followed/?oauth_token='+current_user.twitch))["streams"]
+    end
     render 'layouts/home'
   end
 end

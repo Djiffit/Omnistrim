@@ -25,7 +25,7 @@
                   <img src="<%= s['preview']['large'] %>" alt="" />
                 </a>
               </li>
-              <% end %>
+          <% end %>
       <% end %>
     </ul>
     <ul class="horizontal-slide" style="">
@@ -50,12 +50,24 @@
                   <img src="<%= s['preview']['large'] %>" alt="" />
                 </a>
               </li>
-              <% end %>
+          <% end %>
       <% end %>
     </ul>
   </div>
   <div id="chatside" style="width: 290px; float:right; ">
-    <%= render 'streams/omnichat', messages: @messages %>
+
+      <% if current_user.nil? || current_user.twitch.nil? %>
+          <%= render 'streams/omnichat', messages: @messages %>
+      <% else %>
+        <div class="panel">
+          <% @follows.map do |s| %>
+              <div class="row">
+                <%= s['name'] %>
+              </div>
+              <% end %>
+        </div>
+      <% end %>
+
   </div>
 </div>
 </body>

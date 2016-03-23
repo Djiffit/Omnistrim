@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   post 'signin', to: 'session#create'
   post 'stream_search', to: 'streams#find'
   get ':provider/:name', to: 'streams#show'
+  get 'twitchauth/', to: 'session#create_auth_twitch'
 end
+# s4racyuaz2kt0hn66jrfu5bamnut9ci

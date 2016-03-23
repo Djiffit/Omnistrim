@@ -20,7 +20,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @messages = @user.messages.last(35)
-    @favorites = @user.favorites.last(10)
+    @favorites = @user.favorites
   end
 
   private
