@@ -10,7 +10,7 @@
         </div>
     <% end %>
     <% if @provider == 'youtube' %>
-          <%= render 'streams/youtube' %>
+        <%= render 'streams/youtube' %>
     <% end %>
     <% if @provider == 'azubu' %>
         <%= render 'streams/azubustream' %>
@@ -19,7 +19,11 @@
   <div id="content-wrap" style="float:right; width:300px;">
     <div class="tab-content">
       <div id="omnichat" class="tab-pane fade in active">
-        <%= render 'streams/omnichat', messages: @messages %>
+        <% if provider != 'twitch' %>
+            <%= render 'streams/omnichat', messages: @messages %>
+        <%else %>
+            <%= render 'streams/twitchchat' %>
+        <% end %>
       </div>
     </div>
   </div>
