@@ -56,17 +56,28 @@
   </div>
   <div id="chatside" style="width: 290px; float:right; ">
 
-      <% if current_user.nil? || current_user.twitch.nil? %>
-          <%= render 'streams/omnichat', messages: @messages %>
-      <% else %>
-        <div class="panel">
+    <% if current_user.nil? || current_user.twitch.nil? %>
+
+        <% if current_user && current_user.youtubetoken %>
+        <div class="list-group">
+          <% @youtube.map do |y| %>
+              <a href="/channel/view/<%= y.id %>" class="list-group-item list-group-item-info" style="font-size: small; height: 30px; padding-top: 5px; color:#1c1c1c"><img src="<%= y.thumbnail_url %>" style="height: 22px"><small style=""><%= '  ' + y.title%></small></a>
+          <% end %>
+        </div>
+            <%end %>
+        <% if 1 == 1 %>
+            <%= render 'streams/omnichat', messages: @messages %>
+        <% end %>
+    <% else %>
+        <div style="padding-left: 20px; padding-top: 65px; width: 275px;">
           <% @follows.map do |s| %>
               <div class="row">
-                <%= s['name'] %>
+                <p><a href="<%= '/twitch/'+s['channel']['display_name']%>"><img src="<%= s['channel']['logo'] %>" style="width: 30px"></a>  <%= link_to s['channel']['display_name'], '/twitch/'+s['channel']['display_name']%>   |    <small style="font-size: smaller"><%= s['viewers'] %> viewers </small><br>
+                  <label><small style="font-size: smaller">Playing <%= s['game'] %> </small></label> </p>
               </div>
-              <% end %>
+          <% end %>
         </div>
-      <% end %>
+    <% end %>
 
   </div>
 </div>

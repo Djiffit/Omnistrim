@@ -15,6 +15,7 @@ gem 'faye'
 gem 'bootstrap-sass'
 gem 'bcrypt'
 gem 'sass-rails'
+gem 'yt'
 
 # Gems used only for assets and not required
 # in production environments by default.

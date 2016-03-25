@@ -1,12 +1,18 @@
 class SessionController < ApplicationController
 
   def new
-
     @user = User.new
   end
 
+  def create_auth_yt
+    account = Yt::Account.new authorization_code: params['code'], redirect_uri: 'http://omnistrim.herokuapp.com/ytauth'
+    current_user.update_attribute(:youtubetoken, account.refresh_token)
+    redirect_to '/'
+  end
+
   def create_auth_twitch
-    response = HTTParty.post('https://api.twitch.tv/kraken/oauth2/token?client_id=ht0ychka5fc2g0ao527ick5mjcvmob0&client_secret=s4racyuaz2kt0hn66jrfu5bamnut9ci&grant_type=authorization_code&code='+params[:code]+'&redirect_uri=http://localhost:3000/twitchauth/')
+    response = HTTParty.post('https://api.twitch.tv/kraken/oauth2/token?client_id=ht0ychka5fc2g0ao527ick5mjcvmob0&client_secret=s4racyuaz2kt0hn66jrfu5bamnut9ci&grant_type=authorization_code&code='+params[:code]+'&redirect_uri=http://omnistrim.herokuapp.com/twitchauth/')
+    #response = HTTParty.post('https://api.twitch.tv/kraken/oauth2/token?client_id=ht0ychka5fc2g0ao527ick5mjcvmob0&client_secret=s4racyuaz2kt0hn66jrfu5bamnut9ci&grant_type=authorization_code&code='+params[:code]+'&redirect_uri=http://localhost:3000/twitchauth/')
     current_user.update_attribute(:twitch, response["access_token"])
     namerequest = HTTParty.get('https://api.twitch.tv/kraken/user?oauth_token='+response["access_token"])
     current_user.update_attribute(:twitchname, namerequest["display_name"])

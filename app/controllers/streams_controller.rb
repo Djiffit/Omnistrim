@@ -1,6 +1,10 @@
 class StreamsController < ApplicationController
   before_action :set_stream, only: [:edit, :update, :destroy]
 
+  def show_channel
+    @channel = Yt::Channel.new id: params[:id]
+    @channel = @channel.videos
+  end
 
   def show
     @provider = params[:provider]

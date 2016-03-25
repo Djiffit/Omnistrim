@@ -1,3 +1,4 @@
+
 <div id="main-wrap">
   <div id="sidebar" style="float:left; width:calc(100% - 300px); padding-top:48px">
     <% if @provider == 'twitch' %>
@@ -7,7 +8,11 @@
         <div class="ustream" style="width:calc(100% - 300px)">
           <%= @stream["html"].html_safe %>
         </div>
-    <% else %>
+    <% end %>
+    <% if @provider == 'youtube' %>
+          <%= render 'streams/youtube' %>
+    <% end %>
+    <% if @provider == 'azubu' %>
         <%= render 'streams/azubustream' %>
     <% end %>
   </div>
@@ -19,4 +24,3 @@
     </div>
   </div>
 </div>
-

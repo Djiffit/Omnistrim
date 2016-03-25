@@ -20,7 +20,7 @@
     <div class="panel-heading">
       <span class="glyphicon glyphicon-camera"></span> Recent messages, <a href='/logs/<%= @user.name %>'>see full message history</a>
     </div>
-    <div id="panelchat" class="panel-body" style="height: calc(100vh - 50px)">
+    <div id="panelchat" class="panel-body" style="height: auto">
       <ul class="chat">
         <div id="messages">
           <% @messages.each do |m| %>

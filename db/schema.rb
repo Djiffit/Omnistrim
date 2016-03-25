@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160323185347) do
+ActiveRecord::Schema.define(version: 20160325153233) do
 
   create_table "favorites", force: :cascade do |t|
     t.integer  "user_id"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20160323185347) do
     t.string   "password_digest"
     t.string   "twitch"
     t.string   "twitchname"
+    t.string   "youtubetoken"
   end
 
 end

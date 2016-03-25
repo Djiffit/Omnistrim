@@ -1,0 +1,14 @@
+<body style="overflow-y: auto !important;">
+<div clas="container" style="position: relative; left: 5%; width: 90%; padding-top: 51px">
+  <div class="row">
+    <% @channel.first(300).map do |c| %>
+        <div class="col-md-2" style="height: 250px">
+          <a href="/youtube/<%= c.id %>" class="thumbnail" style="background-color: transparent; border-color: transparent;">
+            <p style="height: 50px"><%=c.title %></p>
+            <img src="<%= c.thumbnail_url.sub('default.jpg', '')+'hqdefault.jpg' %>"  style=" width: 300px">
+          </a>
+        </div>
+    <% end %>
+  </div>
+</div>
+</body>
