@@ -9,3 +9,5 @@
 | 19.3 | Chatin ulkoasun parantaminen, viestien linkitys käyttäjiin, Ustream kanavan avaaminen, kirjautuminen ja rekisteröityminen     | 5h |
 | 20.3 | Suosikkitoiminnon toteuttaminen, profiilisivun parannus     | 4h |
 | 21.3 | Lokisivun parannus, profiilisivun parannusta     | 1h |
+| 23.3 | Twitch käyttäjätilin autentikointi ja linkitys     | 3h |
+| 25.3 | Youtube tilin linkitys ja Youtube videoiden upotus     | 5h |

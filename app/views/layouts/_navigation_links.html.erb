@@ -27,7 +27,7 @@
     <li>
       <% if current_user.twitch.nil? %>
           <%= link_to 'Twitch Auth Local', 'https://api.twitch.tv/kraken/oauth2/authorize?response_type=code&client_id=ht0ychka5fc2g0ao527ick5mjcvmob0&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Ftwitchauth%2F&scope=user_read+user_follows_edit' %>
-          <%= link_to 'Twitch Auth Omnistrim', 'https://api.twitch.tv/kraken/oauth2/authorize?response_type=code&client_id=ht0ychka5fc2g0ao527ick5mjcvmob0&redirect_uri=http%3A%2F%2Fomnistrim.herokuapp.com%3A3000%2Ftwitchauth%2F&scope=user_read+user_follows_edit' %>
+          <%= link_to 'Twitch Auth Omnistrim', 'https://api.twitch.tv/kraken/oauth2/authorize?response_type=code&client_id=ht0ychka5fc2g0ao527ick5mjcvmob0&redirect_uri=http://omnistrim.herokuapp.com/twitchauth/&scope=user_read+user_follows_edit' %>
       <% end %>
     </li>
     <li>
@@ -37,7 +37,7 @@
       </li>
     <li>
       <% if current_user.youtubetoken.nil? %>
-          <%= link_to 'Youtube Link Omnistrim', 'https://accounts.google.com/o/oauth2/auth?access_type=offline&approval_prompt=force&client_id=527203940713-6o128c0piis6gm1t3rnk3rrmmdvq8tgr.apps.googleusercontent.com&redirect_uri=http%3A%2F%2Fomnistrim.herokuapp.com&response_type=code&scope=https://www.googleapis.com/auth/youtube&' %>
+          <%= link_to 'Youtube Link Omnistrim', 'https://accounts.google.com/o/oauth2/auth?access_type=offline&approval_prompt=force&client_id=527203940713-6o128c0piis6gm1t3rnk3rrmmdvq8tgr.apps.googleusercontent.com&redirect_uri=http%3A%2F%2Fomnistrim.herokuapp.com/ytauth&response_type=code&scope=https://www.googleapis.com/auth/youtube&' %>
       <% end %>
     </li>
 
