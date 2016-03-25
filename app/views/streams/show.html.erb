@@ -19,7 +19,7 @@
   <div id="content-wrap" style="float:right; width:300px;">
     <div class="tab-content">
       <div id="omnichat" class="tab-pane fade in active">
-        <% if provider != 'twitch' %>
+        <% if @provider != 'twitch' %>
             <%= render 'streams/omnichat', messages: @messages %>
         <%else %>
             <%= render 'streams/twitchchat' %>
