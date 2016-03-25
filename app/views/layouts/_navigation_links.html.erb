@@ -26,7 +26,8 @@
     </li>
     <li>
       <% if current_user.twitch.nil? %>
-          <%= link_to 'Twitch Auth', 'https://api.twitch.tv/kraken/oauth2/authorize?response_type=code&client_id=ht0ychka5fc2g0ao527ick5mjcvmob0&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Ftwitchauth%2F&scope=user_read+user_follows_edit' %>
+          <%= link_to 'Twitch Auth Local', 'https://api.twitch.tv/kraken/oauth2/authorize?response_type=code&client_id=ht0ychka5fc2g0ao527ick5mjcvmob0&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Ftwitchauth%2F&scope=user_read+user_follows_edit' %>
+          <%= link_to 'Twitch Auth Omnistrim', 'https://api.twitch.tv/kraken/oauth2/authorize?response_type=code&client_id=ht0ychka5fc2g0ao527ick5mjcvmob0&redirect_uri=http%3A%2F%2Fomnistrim.herokuapp.com%3A3000%2Ftwitchauth%2F&scope=user_read+user_follows_edit' %>
       <% end %>
     </li>
     <li>
