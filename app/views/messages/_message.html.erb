@@ -1,6 +1,27 @@
+<% if message.society.name == 'dummy'%>
+    <div class="message">
+      <li><span class="created_at">
+  </span>
+        <a target="_blank" href="<%= user_path(message.user) %>"><b style="color:cornflowerblue"><%= message.user.name %>
+        </b> </a>: <%= message.content %>
+      </li>
+    </div>
+<% else %>
+    <div class="message">
+      <li style="color: greenyellow"><span class="created_at">
+  </span>
+        <a target="_blank" href="<%= society_path(message.society) %>">
+          <b style="color:greenyellow">
+            <%= message.society.abbreviation %>
+          </b>
+        </a>
 
-<div class="message">
-  <li><span class="created_at">
-  </span> <a target="_blank" href="<%= user_path(message.user) %>"><b style="color:cornflowerblue"><%= message.user.name %></a></b>: <%= message.content %>
-  </li>
-</div>
+        <a target="_blank" href="<%= user_path(message.user) %>">
+          <b style="color:cornflowerblue">
+            <%= message.user.name %>
+          </b>
+        </a>
+        : <%= message.content %>
+      </li>
+    </div>
+<% end %>

@@ -48,6 +48,3 @@ function showTwitch() {
     c.style.display = 'block';
 }
 
-function emptyField() {
-    $("#new_message")[0].reset();
-}

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :memberships
+  resources :societies
   resources :streams
   resources :messages
   resources :users

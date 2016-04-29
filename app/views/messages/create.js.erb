@@ -1,4 +1,4 @@
-<% publish_to "/messages/new" do %>
+<% publish_to "/messages/"+@message.society.abbreviation do %>
 $("#messages").append("<%= j render(@message) %>");
 var panel = document.getElementById('panelchat')
 panel.scrollTop = panel.scrollHeight
