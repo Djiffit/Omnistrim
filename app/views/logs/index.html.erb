@@ -57,7 +57,7 @@
         <tr>
           <td> <%= link_to user.abbreviation, 'logs/'+user.abbreviation %> </td>
           <td style=" padding-left: 1.5%;"> <%= link_to user.messages.count, 'logs/'+user.abbreviation %> </td>
-          <td> <%= link_to user.messages.last.content, 'logs/'+user.abbreviation  if !user.messages.last.nil? && current_user.societies.include?(user)%> </td>
+          <td> <%= link_to user.messages.last.content, 'logs/'+user.abbreviation  if current_user && !user.messages.last.nil? && current_user.societies.include?(user)%> </td>
         </tr>
     <% end %>
     </tbody>
