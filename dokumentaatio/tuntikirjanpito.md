@@ -11,3 +11,4 @@
 | 21.3 | Lokisivun parannus, profiilisivun parannusta     | 1h |
 | 23.3 | Twitch käyttäjätilin autentikointi ja linkitys     | 3h |
 | 25.3 | Youtube tilin linkitys ja Youtube videoiden upotus     | 5h |
+| 29.4 | Käyttöliittymän parantaminen, yhteisöjen lisääminen ja niille yhteisökohtaisten kanavien konfigurointi     | 6h |
