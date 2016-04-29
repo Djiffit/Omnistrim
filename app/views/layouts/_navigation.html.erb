@@ -13,15 +13,30 @@
     <ul class="nav navbar-nav">
       <%= render 'layouts/navigation_links' %>
     </ul>
-    <!--<ul class="nav nav-tabs pull-right">-->
-    <!--<li><a data-toggle="tab" href="#omnichat">Omnistrim chat</a></li>-->
-    <!--<li><a data-toggle="tab" href="#chanchat">Channel chat</a></li>-->
-    <!--</ul>-->
+    <div class="btn-group">
+      <% if @provider == 'twitch' && @messages %>
+          <button class="btn btn-default btn-xs" style="position:relative; top: 13px; left: 10px;" onclick="toggle_visibility('twitchchat');">Toggle
+            omnichat</button>
+      <% else %>
+          <button class="btn btn-default btn-xs" style="position:relative; top: 13px; left: 10px;" onclick="showOmni();">Show
+            Omnichat</button>
+      <% end %>
+
+      <% if @youtube %>
+          <button class="btn btn-default btn-xs" style="position:relative; top: 13px; left: 10px;" onclick="showYt();">Show
+            Youtube</button>
+      <% end %>
+      <% if @follows %>
+          <button class="btn btn-default btn-xs" style="position:relative; top: 13px; left: 10px;" onclick="showTwitch();">Show
+            Twitch</button>
+      <% end %>
+
+    </div>
     <div class="navbar-header navbar-right">
       <div class="navbar-form pull-right">
         <%= form_tag stream_search_path, id: 'lol', :method => :post do %>
-            <%= text_field_tag :name, params[:name], placeholder: "Channel name", class: 'form-control', style:'position:absolute; right:182px; top:9px'%>
-            <div class="navbar input-group" >
+            <%= text_field_tag :name, params[:name], placeholder: "Channel name", class: 'form-control', style: 'position:absolute; right:182px; top:9px' %>
+            <div class="navbar input-group">
               <select name="provider" class="form-control">
                 <option value="twitch">Twitch</option>
                 <option value="azubu">Azubu</option>

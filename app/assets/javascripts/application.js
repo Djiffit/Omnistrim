@@ -9,3 +9,45 @@
 //= require jquery_ujs
 //= require private_pub
 //= require_tree .
+
+function toggle_visibility(id) {
+    var e = document.getElementById(id);
+    if (e.style.display != 'none') {
+        e.style.display = 'none';
+    }
+    else {
+        e.style.display = 'block';
+    }
+}
+
+function showOmni() {
+    var e = document.getElementById('omniscreen');
+    var b = document.getElementById('youtubeBox');
+    var c = document.getElementById('twitchFollows');
+    e.style.display = 'none';
+    b.style.display = 'none';
+    c.style.display = 'none';
+    e.style.display = 'block';
+}
+function showYt() {
+    var e = document.getElementById('omniscreen');
+    var b = document.getElementById('youtubeBox');
+    var c = document.getElementById('twitchFollows');
+    e.style.display = 'none';
+    b.style.display = 'none';
+    c.style.display = 'none';
+    b.style.display = 'block';
+}
+function showTwitch() {
+    var e = document.getElementById('omniscreen');
+    var b = document.getElementById('youtubeBox');
+    var c = document.getElementById('twitchFollows');
+    e.style.display = 'none';
+    b.style.display = 'none';
+    c.style.display = 'none';
+    c.style.display = 'block';
+}
+
+function emptyField() {
+    $("#new_message")[0].reset();
+}
