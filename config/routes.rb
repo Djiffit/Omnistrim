@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :streams
   resources :messages
   resources :users
+  post 'societies/create', to: 'societies#create'
+  post 'societies/join', to: 'memberships#create'
   post 'favorites/create', to: 'favorites#create'
   root to: 'application#home'
   get 'logs/:name', to: 'logs#show'

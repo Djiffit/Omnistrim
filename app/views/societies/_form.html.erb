@@ -1,29 +1,60 @@
-<%= form_for(@society) do |f| %>
-  <% if @society.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@society.errors.count, "error") %> prohibited this society from being saved:</h2>
+<% if @society.errors.any? %>
+    <div style="color: red;" id="error_explanation" align="center">
+      <h2><%= pluralize(@society.errors.count, "error") %> prohibited this membership from being saved:</h2>
 
       <ul>
-      <% @society.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% @society.errors.full_messages.each do |message| %>
+            <li>
+              <%= message %>
+            </li>
+        <% end %>
       </ul>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :abbreviation %><br>
-    <%= f.text_field :abbreviation %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>
+<body style="padding-top: 60px; overflow-y: auto">
+<div align="center" style="padding-top: 50px">
+  <div class="row">
+    <%= form_tag 'create', method: :post do %>
+        <div class="form-group input-group has-feedback" align="center" style="width: 400px;">
+        <span class="input-group-addon">
+           <i class="glyphicon glyphicon-user"></i>
+        </span>
+          <input class="form-control" autocomplete="off" id="name" name="name" type="text" placeholder="Enter the name of this society" style="width: 400px;"/>
+        </div>
+        <br>
+        <div class="form-group input-group has-feedback" style="width: 400px">
+        <span class="input-group-addon">
+          <i class="glyphicon glyphicon-scissors"></i>
+        </span>
+          <input class="form-control" autocomplete="off" id="abbreviation" name="abbreviation" placeholder="Enter a three character abbreviation" type="text" style="width: 400px;"/>
+        </div>
+        <br>
+        <div class="form-group input-group has-feedback" style="width: 400px">
+        <span class="input-group-addon">
+          <i class="glyphicon glyphicon-pencil"></i>
+        </span>
+          <textarea class="form-control" id="description" name="description" placeholder="Description for this society" type="text" style="width: 400px;height: 200px;"></textarea>
+        </div>
+        <br>
+        <div class="row">
+          <div class="btn-group">
+            <button type="button" class="btn btn-default dropdown-toggle form-control" onclick="enableThing()" data-toggle="dropdown" style="width: 400px;">
+              <span data-bind="label">Select One</span>&nbsp;<span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" style="width: 400px;" role="menu">
+              <% @streams = @streams.sort_by { |s| s.name } %>
+              <% @streams.each do |s| %>
+                  <li onclick="setStreamId(<%= s.id %>)">
+                    <a href="#" onclick="setStreamId(<%= s.id %>)"><%= s.name %></a></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+        <input class="form-control hidden" id="stream_id" name="stream_id" type="hidden" value=""/>
+        <br>
+        <br>
+        <%= submit_tag "Create", class: "btn btn-submit btn-sm", style: "color:black" %>
+    <% end %>
+  </div>
+</div>
+</body>

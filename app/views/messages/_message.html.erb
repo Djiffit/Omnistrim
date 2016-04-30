@@ -1,15 +1,38 @@
-<% if message.society.name == 'dummy'%>
-    <div class="message">
-      <li><span class="created_at">
-  </span>
+<% if message.society.nil? && message.target_name.nil? %>
+    <div id="publicMessage" name="publicMessage" class="message">
+      <li>
         <a target="_blank" href="<%= user_path(message.user) %>"><b style="color:cornflowerblue"><%= message.user.name %>
         </b> </a>: <%= message.content %>
       </li>
     </div>
-<% else %>
-    <div class="message">
-      <li style="color: greenyellow"><span class="created_at">
-  </span>
+<% end %>
+
+<% if !message.target_name.nil? %>
+    <div name="privateMessage" id="privateMessage" class="message">
+      <li style="color: deeppink">
+        <% if 1 == message.target_user_id %>
+            To
+            <a target="_blank" href="<%= user_path(User.find_by(name: message.target_name)) %>">
+              <b style="color:orangered">
+                <%= message.target_name %>
+              </b>
+            </a>
+        <% else %>
+            From
+            <a target="_blank" href="<%= user_path(message.user) %>">
+              <b style="color:greenyellow">
+                <%= message.user.name %>
+              </b>
+            </a>
+        <% end %>
+        : <%= message.content %>
+      </li>
+    </div>
+<% end %>
+
+<% if !message.society.nil? %>
+    <div name="societyMessage" id="societyMessage" class="message">
+      <li style="color: greenyellow">
         <a target="_blank" href="<%= society_path(message.society) %>">
           <b style="color:greenyellow">
             <%= message.society.abbreviation %>

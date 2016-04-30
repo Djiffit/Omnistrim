@@ -47,6 +47,7 @@
 }
 body {
   max-width: 100%;
+  color:#eeeeee;
   overflow-x: hidden;
   overflow-y: hidden;
   background: #000000 !important;
@@ -162,3 +163,5 @@ ul.horizontal-slide li[class*="span"] {
 ul.horizontal-slide li[class*="span"]:first-child {
   margin-left: 0;
 }
+
+

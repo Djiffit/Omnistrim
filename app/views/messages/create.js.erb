@@ -1,7 +1,45 @@
+<% if !@message.society.nil? %>
 <% publish_to "/messages/"+@message.society.abbreviation do %>
 $("#messages").append("<%= j render(@message) %>");
 var panel = document.getElementById('panelchat')
 panel.scrollTop = panel.scrollHeight
 $('#panel-body').scrollTop;
+hideMessage('society');
 <% end %>
 $("#new_message")[0].reset();
+
+<% end %>
+
+<% if !@message.target_name.nil? %>
+<% publish_to "/messages/"+@message.target_name do %>
+<% @message.target_user_id = 0 %>
+$("#messages").append("<%= j render(@message) %>");
+var panel = document.getElementById('panelchat')
+panel.scrollTop = panel.scrollHeight
+$('#panel-body').scrollTop;
+hideMessage('private');
+<% end %>
+$("#new_message")[0].reset();
+
+<% publish_to "/messages/"+@message.user.name do %>
+<% @message.target_user_id = 1 %>
+$("#messages").append("<%= j render(@message) %>");
+
+var panel = document.getElementById('panelchat')
+panel.scrollTop = panel.scrollHeight
+$('#panel-body').scrollTop;
+hideMessage('private');
+<% end %>
+$("#new_message")[0].reset();
+
+<% end %>
+
+<% if @message.target_name.nil? && @message.society.nil? %>
+<% publish_to "/messages/public" do %>
+$("#messages").append("<%= j render(@message) %>");
+$('#panel-body').scrollTop;
+hideMessage('public');
+<% end %>
+$("#new_message")[0].reset();
+
+<% end %>

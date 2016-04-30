@@ -8,7 +8,7 @@ class StreamsController < ApplicationController
 
   def show
     @provider = params[:provider]
-    @messages = Message.last(10)
+    @messages = Message.where(society_id:nil, target_name:nil).last(20)
     if (@provider == 'ustream')
       @stream = (HTTParty.get ('http://api.embedly.com/1/oembed?url=ustream.tv/'+params[:name].downcase+'&width=1600&autoplay=true&height=900&key=:08c367084bc646d9930486f5b88d53c6'))
       if (@stream["error"])

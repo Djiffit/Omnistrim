@@ -1,4 +1,5 @@
 class SessionController < ApplicationController
+  before_action :ensure_that_signed_in, except: [:new, :create]
 
   def new
     @user = User.new

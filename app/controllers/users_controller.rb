@@ -19,7 +19,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @messages = @user.messages.last(35)
+    @messages = @user.messages.where(society_id:nil, target_name:nil).last(20)
     @favorites = @user.favorites
   end
 

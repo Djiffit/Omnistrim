@@ -1,4 +1,5 @@
 class MembershipsController < ApplicationController
+  before_action :ensure_that_signed_in
   before_action :set_membership, only: [:show, :edit, :update, :destroy]
 
   # GET /memberships
@@ -21,10 +22,9 @@ class MembershipsController < ApplicationController
 
   # POST /memberships
   def create
-    @membership = Membership.new(membership_params)
-
+    @membership = Membership.create(user_id:params[:user_id], society_id:params[:society_id])
     if @membership.save
-      redirect_to @membership, notice: 'Membership was successfully created.'
+      redirect_to society_path(params[:society_id]), notice: 'Membership was successfully created.'
     else
       render :new
     end

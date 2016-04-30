@@ -19,6 +19,49 @@ function toggle_visibility(id) {
         e.style.display = 'block';
     }
 }
+function toggle_visibility_plural(name) {
+    var e = document.getElementsByName(name);
+    var el
+    var len
+    if (e.length > 0) {
+        if (e[0].style.display != 'none') {
+            for (var i = 0, len = e.length; i < len; i++) {
+                e[i].style.display = 'none'
+            }
+        }
+        else {
+            for (var i = 0, len = e.length; i < len; i++) {
+                e[i].style.display = 'block'
+            }
+        }
+    }
+}
+
+function hideMessage(type) {
+    var e;
+    if (type === 'public') {
+        if (document.getElementById('badNormal').style.display != 'none') {
+            var e = document.getElementsByName('publicMessage');
+            e[e.length - 1].style.display = 'none';
+        }
+    } else if (type === 'private') {
+        if (document.getElementById('badPrivate').style.display != 'none') {
+            var e = document.getElementsByName('privateMessage');
+            e[e.length - 1].style.display = 'none';
+        }
+    } else if (type === 'society') {
+        if (document.getElementById('badSociety').style.display != 'none') {
+            var e = document.getElementsByName('societyMessage');
+            e[e.length - 1].style.display = 'none';
+        }
+    }
+    scrollBottom();
+}
+
+function scrollBottom() {
+    var panel = document.getElementById('panelchat');
+    panel.scrollTop = panel.scrollHeight;
+}
 
 function showOmni() {
     var e = document.getElementById('omniscreen');
@@ -47,4 +90,17 @@ function showTwitch() {
     c.style.display = 'none';
     c.style.display = 'block';
 }
-
+function enableThing() {
+    $(document.body).on('click', '.dropdown-menu li', function (event) {
+        var $target = $(event.currentTarget);
+        $target.closest('.btn-group')
+            .find('[data-bind="label"]').text($target.text())
+            .end()
+            .children('.dropdown-toggle').dropdown('toggle');
+        return false;
+    });
+}
+function setStreamId(id) {
+    var a = document.getElementById('stream_id')
+    a.value = id
+}
