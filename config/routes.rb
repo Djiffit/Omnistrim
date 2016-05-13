@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :streams
   resources :messages
   resources :users
+  post 'favorites/destroy', to: 'favorites#destroy'
   post 'societies/create', to: 'societies#create'
   post 'societies/join', to: 'memberships#create'
   post 'favorites/create', to: 'favorites#create'

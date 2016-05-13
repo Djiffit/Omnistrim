@@ -1,4 +1,4 @@
 class Favorite < ActiveRecord::Base
-  belongs_to :user, dependent: :destroy
-  belongs_to :stream, dependent: :destroy
+  belongs_to :user
+  belongs_to :stream
 end

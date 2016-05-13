@@ -6,9 +6,8 @@
 <div clas="container" style=" width:calc(100vw - 350px); flex-wrap: wrap">
   <div class="row" style="width:calc(100vw - 390px)">
     <% @favorites.each  do |s| %>
-        <div class="col-md-1 col-sm-1 col-lg-1" style="height: 180px;">
+        <div class="col-md-1 col-sm-1 col-lg-1" style="">
           <a href=<%= '/'+s.stream.provider+'/'+s.stream.name%> class="thumbnail" style="background-color: transparent; border-color: transparent;">
-            <p><%= s.stream.name %></p>
             <img src="<%= s.stream.icon %>"  style="width: 90px;">
           </a>
         </div>

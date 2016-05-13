@@ -16,8 +16,12 @@ class StreamsController < ApplicationController
         return
       end
     end
-    if Stream.find_by(name:params[:name], provider:params[:provider]).nil?
-      stream = Stream.create(name:params[:name], provider:params[:provider])
+    chooseProvider
+  end
+
+  def chooseProvider
+    if Stream.find_by(name: params[:name], provider: params[:provider]).nil?
+      stream = Stream.create(name: params[:name], provider: params[:provider])
       if (@provider == 'twitch')
         stream.icon = (HTTParty.get ('https://api.twitch.tv/kraken/streams/'+params[:name].downcase))['stream']['channel']['logo']
         stream.save

@@ -11,4 +11,12 @@ class FavoritesController < ApplicationController
     else
     end
   end
+
+  def destroy
+    if current_user.twitch
+      HTTParty.delete('https://api.twitch.tv/kraken/users/'+current_user.twitchname+'/follows/channels/'+params[:channel]+'?oauth_token='+current_user.twitch)
+    end
+    Favorite.find_by(user_id:current_user.id, stream_id:Stream.find_by(name:params[:channel]).id).destroy
+    redirect_to '/'+params[:service]+'/'+params[:channel]
+  end
 end
