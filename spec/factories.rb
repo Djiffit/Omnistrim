@@ -37,6 +37,7 @@ FactoryGirl.define do
     content "Very fun actyalu god joke"
     user_id FactoryGirl.create(:user).id
 
+    
   end
 
 end
