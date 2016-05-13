@@ -16,19 +16,23 @@
     <div class="btn-group">
       <% if @provider == 'twitch' && @messages %>
           <button class="btn btn-default btn-xs" style="position:relative; top: 13px; left: 10px;" onclick="toggle_visibility('twitchchat');">Toggle
-            omnichat</button>
+            omnichat
+          </button>
       <% else %>
           <button class="btn btn-default btn-xs" style="position:relative; top: 13px; left: 10px;" onclick="showOmni();">Show
-            Omnichat</button>
+            Omnichat
+          </button>
       <% end %>
 
       <% if @youtube %>
           <button class="btn btn-default btn-xs" style="position:relative; top: 13px; left: 10px;" onclick="showYt();">Show
-            Youtube</button>
+            Youtube
+          </button>
       <% end %>
       <% if @follows %>
           <button class="btn btn-default btn-xs" style="position:relative; top: 13px; left: 10px;" onclick="showTwitch();">Show
-            Twitch</button>
+            Twitch
+          </button>
       <% end %>
 
     </div>

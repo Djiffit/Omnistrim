@@ -52,10 +52,6 @@ class StreamsController < ApplicationController
     redirect_to('/'+params[:provider]+'/'+params[:name])
   end
 
-  def index
-    @streams = Stream.all
-  end
-
 
   def create
     @stream = Stream.new(stream_params)
