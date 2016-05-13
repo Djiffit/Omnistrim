@@ -27,17 +27,11 @@ FactoryGirl.define do
     stream_id FactoryGirl.create(:stream).id
   end
 
-  factory :membership do
-    user_id FactoryGirl.create(:user).id
-    society_id FactoryGirl.create(:society).id
-
-  end
-
   factory :message do
     content "Very fun actyalu god joke"
     user_id FactoryGirl.create(:user).id
 
-    
+
   end
 
 end

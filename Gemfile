@@ -43,3 +43,4 @@ gem 'nifty-generators'
 gem 'jquery-rails'
 gem 'foreman'
 gem 'private_pub'
+gem "codeclimate-test-reporter", group: :test, require: nil
