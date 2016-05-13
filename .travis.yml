@@ -4,7 +4,6 @@ rvm:
 script:
 - bundle exec rake db:create
 - bundle exec rake db:migrate RAILS_ENV="production"
-- bundle exec rake db:test:prepare
 - bundle exec rspec -fd spec/
 after_success:
   - coveralls:report
