@@ -15,7 +15,7 @@ class MessagesController < ApplicationController
   end
 
   def findMessageType
-    if @message.content[0..4].match('^/[a-z][a-z][a-z][ ]') && !Society.find_by_abbreviation(@message.content.to_s[1..3]).nil?
+    if @message.content[0..4].match('^/[a-z][a-z][a-z][ ]') && !Society.find_by_abbreviation(@message.content.to_s[1..3]).nil? && current_user.societies.include?(Society.find_by_abbreviation(@message.content.to_s[1..3]))
       createSocietyMessage
     else
       if @message.content[0..4].match('^/[w][ ]') && !User.find_by_name(@message.content.split[1].capitalize).nil?

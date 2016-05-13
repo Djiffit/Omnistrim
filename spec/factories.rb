@@ -8,6 +8,13 @@ FactoryGirl.define do
     twitchname "antoisaamaanantaita"
   end
 
+  factory :user2, class: User do
+    name "Pekkaa"
+    password "pekka"
+    password_confirmation "pekka"
+    youtubetoken "1/Pon3RV0NDBklNtbVZ4nHpreMdm6WkUhE2GeZ6-3dWAAMEudVrK5jSpoR30zcRFq6"
+  end
+
   factory :stream do
     name "MANvsGAME"
     provider "twitch"
@@ -27,10 +34,10 @@ FactoryGirl.define do
     stream_id FactoryGirl.create(:stream).id
   end
 
+
   factory :message do
     content "Very fun actyalu god joke"
     user_id FactoryGirl.create(:user).id
-
 
   end
 

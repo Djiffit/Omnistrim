@@ -7,7 +7,7 @@
   <div class="row" style="width:calc(100vw - 390px)">
     <% @favorites.each  do |s| %>
         <div class="col-md-1 col-sm-1 col-lg-1" style="">
-          <a href=<%= '/'+s.stream.provider+'/'+s.stream.name%> class="thumbnail" style="background-color: transparent; border-color: transparent;">
+          <a id="<%= s.stream.name %>"href=<%= '/'+s.stream.provider+'/'+s.stream.name%> class="thumbnail" style="background-color: transparent; border-color: transparent;">
             <img src="<%= s.stream.icon %>"  style="width: 90px;">
           </a>
         </div>

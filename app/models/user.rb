@@ -5,4 +5,5 @@ class User < ActiveRecord::Base
   has_many :memberships
   has_many :societies, through: :memberships
   has_secure_password
+  validates :password, length: {minimum: 3, maximum: 200}
 end
