@@ -6,7 +6,7 @@ script:
 - rake db:test:prepare
 - rake db:test:prepare
 - bundle exec rspec -fd spec/
-rspec spec
+- rspec spec
 after_success:
   - coveralls:report
 notifications:
