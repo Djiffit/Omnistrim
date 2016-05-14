@@ -29,7 +29,7 @@
                 <div class="input-group">
                   <%= f.text_field :content, class: "form-control", autocomplete: "off" %>
                   <span class="input-group-btn">
-            <%= f.submit "Send", class: "btn btn-default" %>
+            <%= f.submit "Send", name:'Send', id:'Send', class: "btn btn-default", remote:true %>
               </span>
                 </div>
             <% end %>

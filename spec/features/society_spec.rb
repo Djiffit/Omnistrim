@@ -35,7 +35,8 @@ describe "society functionality" do
     visit '/signout'
     FactoryGirl.create(:user2)
     sign_in(username:"Pekkaa", password:"pekka")
-    visit '/societies/1'
+    visit '/societies/'
+    click_link('Show')
     click_button('Join this Society')
     expect(page).to have_content('Membership was successfully created.')
   end

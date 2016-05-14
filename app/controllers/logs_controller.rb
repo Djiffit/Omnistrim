@@ -10,7 +10,7 @@ class LogsController < ApplicationController
     else
       if params[:name].length == 3
         @society = Society.find_by_abbreviation(params[:name])
-        if !current_user.societies.include?(@society)
+        if !current_user || !current_user.societies.include?(@society)
           redirect_to('/logs', notice: "You cannot view the logs of a society that you are not a part of!")
         end
         @messages = Message.all.where(society: @society)

@@ -9,7 +9,11 @@ class MessagesController < ApplicationController
   def create
     @message = Message.create(content: params[:message][:content])
     if @message.content.to_s.length > 0
-      @message.user_id = current_user.id
+      if current_user
+        @message.user_id = current_user.id
+      else
+        @message.user_id = 1
+      end
       findMessageType
     end
   end
