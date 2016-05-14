@@ -1,11 +1,6 @@
 class MessagesController < ApplicationController
   before_action except: [:index]
 
-  def index
-    @messages = Message.all
-    render 'streams/show'
-  end
-
   def create
     @message = Message.create(content: params[:message][:content])
     if @message.content.to_s.length > 0

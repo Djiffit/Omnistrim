@@ -37,6 +37,9 @@ group :assets do
   gem 'coffee-rails'
   gem 'uglifier'
 end
+group :development do
+  gem "rails-erd"
+end
 gem 'omniauth-oauth2'
 gem 'httparty'
 gem 'byebug'

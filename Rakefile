@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Chatter::Application.load_tasks
+Omnistrim::Application.load_tasks

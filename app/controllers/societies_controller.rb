@@ -21,11 +21,6 @@ class SocietiesController < ApplicationController
     @streams = Stream.where('provider=? OR provider=?', 'twitch', 'ustream')
   end
 
-  # GET /societies/1/edit
-  def edit
-    @streams = Stream.where('provider=? OR provider=?', 'twitch', 'ustream')
-  end
-
   # POST /societies
   def create
     if params[:stream_id]
@@ -43,29 +38,4 @@ class SocietiesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /societies/1
-  def update
-    if @society.update(society_params)
-      redirect_to @society, notice: 'Society was successfully updated.'
-    else
-      render :edit
-    end
-  end
-
-  # DELETE /societies/1
-  def destroy
-    @society.destroy
-    redirect_to societies_url, notice: 'Society was successfully destroyed.'
-  end
-
-  private
-  # Use callbacks to share common setup or constraints between actions.
-  def set_society
-    @society = Society.find(params[:id])
-  end
-
-  # Only allow a trusted parameter "white list" through.
-  def society_params
-    params.require(:society).permit(:name, :abbreviation, :description, :stream_id)
-  end
 end
