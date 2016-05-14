@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-  before_action :ensure_that_signed_in, except: [:index]
+  before_action except: [:index]
 
   def index
     @messages = Message.all
