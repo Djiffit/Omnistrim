@@ -38,11 +38,12 @@ describe "messaging functionality" do
   end
 
   it 'messages are shown in logs' do
-    Message.create(content:'Peepee jjeeejee', user_id:1).save
+    user = User.create(name:'Janne', password:'janne', password_confirmation:'janne')
+    Message.create(content:'Peepee jjeeejee', user_id:user.id).save
     visit '/logs/'
     visit '/logs/all'
     expect(page).to have_content('Peepee jjeeejee')
-    visit '/logs/Pekka'
+    visit '/logs/Janne'
     expect(page).to have_content('Peepee jjeeejee')
   end
 
@@ -55,7 +56,9 @@ describe "messaging functionality" do
     click_button('streamS')
     click_link('MANvsGAME', match: :first)
     click_button('Create')
-    Message.create(content:'Nice test message we have here nice very nice', user_id:1, society_id:2).save
+    visit '/societies'
+    save_and_open_page
+    Message.create(content:'Nice test message we have here nice very nice', user_id:1, society_id:1).save
     visit '/logs/fed'
     expect(page).to have_content('test message we have here')
     Message.create(content:'Peepee jjeeejee', user_id:1).save
