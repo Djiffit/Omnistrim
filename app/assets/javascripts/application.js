@@ -65,19 +65,17 @@ function scrollBottom() {
 
 function showOmni() {
     var e = document.getElementById('omniscreen');
+    e.style.display = 'block';
     var b = document.getElementById('youtubeBox');
     var c = document.getElementById('twitchFollows');
-    e.style.display = 'none';
-    b.style.display = 'none';
     c.style.display = 'none';
-    e.style.display = 'block';
+    b.style.display = 'none';
 }
 function showYt() {
     var e = document.getElementById('omniscreen');
     var b = document.getElementById('youtubeBox');
     var c = document.getElementById('twitchFollows');
     e.style.display = 'none';
-    b.style.display = 'none';
     c.style.display = 'none';
     b.style.display = 'block';
 }
@@ -85,10 +83,9 @@ function showTwitch() {
     var e = document.getElementById('omniscreen');
     var b = document.getElementById('youtubeBox');
     var c = document.getElementById('twitchFollows');
+    c.style.display = 'block';
     e.style.display = 'none';
     b.style.display = 'none';
-    c.style.display = 'none';
-    c.style.display = 'block';
 }
 function enableThing() {
     $(document.body).on('click', '.dropdown-menu li', function (event) {

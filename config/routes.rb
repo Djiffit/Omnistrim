@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   post 'societies/create', to: 'societies#create'
   post 'societies/join', to: 'memberships#create'
   post 'favorites/create', to: 'favorites#create'
+  get 'twitch/add', to: 'session#createStreamsAndFavorites'
   root to: 'application#home'
   get 'logs/:name', to: 'logs#show'
   get 'logs', to: 'logs#index'

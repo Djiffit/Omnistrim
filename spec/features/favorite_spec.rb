@@ -14,6 +14,7 @@ describe "favorite functionality" do
     user = FactoryGirl.create(:user)
     sign_in(username: "Pekka", password: "pekka")
     visit '/twitch/MANvsGAME'
+    save_and_open_page
     click_button('Favorite')
     visit user_path(user)
     expect(page).to have_css("a#MANvsGAME")
@@ -29,6 +30,15 @@ describe "favorite functionality" do
     click_button('Favorite')
     visit user_path(user)
     expect(page).not_to have_css("a#MANvsGAME")
+  end
+
+  it "adds twitch follows as favorites" do
+    User.all.each do |s| s.destroy end
+    user = FactoryGirl.create(:user)
+    visit societies_path
+    sign_in(username: "Pekka", password: "pekka")
+    visit '/twitch/add'
+    visit user_path(user)
   end
 
 end

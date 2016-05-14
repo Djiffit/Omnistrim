@@ -36,6 +36,7 @@ class SessionController < ApplicationController
         end
       end
     end
+    redirect_to '/'
   end
 
   def create

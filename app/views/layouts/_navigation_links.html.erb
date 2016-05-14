@@ -9,9 +9,11 @@
       </a>
       <ul class="dropdown-menu">
         <% if current_user.twitch.nil? %>
+
             <li>
               <%= link_to 'Twitch Auth', 'https://api.twitch.tv/kraken/oauth2/authorize?response_type=code&client_id=ht0ychka5fc2g0ao527ick5mjcvmob0&redirect_uri=http://omnistrim.herokuapp.com/twitchauth/&scope=user_read+user_follows_edit' %>
         <% end %>
+        <li><%= link_to 'Twitch Favorites', '/twitch/add' %></li>
         </li>
         <li>
           <% if current_user.youtubetoken.nil? %>
