@@ -6,7 +6,7 @@ class LogsController < ApplicationController
 
   def show
     if params[:name] == 'all'
-      @messages = Message.all.select { |a| a.society.nil? && (a.target_name != current_user.name ) }
+      @messages = Message.all.select { |a| a.society.nil? && (a.target_name == nil) }
     else
       if params[:name].length == 3
         @society = Society.find_by_abbreviation(params[:name])

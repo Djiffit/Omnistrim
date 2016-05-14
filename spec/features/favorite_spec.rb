@@ -14,7 +14,6 @@ describe "favorite functionality" do
     user = FactoryGirl.create(:user)
     sign_in(username: "Pekka", password: "pekka")
     visit '/twitch/MANvsGAME'
-    save_and_open_page
     click_button('Favorite')
     visit user_path(user)
     expect(page).to have_css("a#MANvsGAME")

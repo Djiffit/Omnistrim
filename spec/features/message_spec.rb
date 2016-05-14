@@ -25,8 +25,10 @@ describe "messaging functionality" do
     visit '/'
   end
 
-  it 'shows society messages to society members' do
-
+  it 'messages are shown in logs' do
+    Message.create(content:'Peepee jjeeejee', user_id:FactoryGirl.create(:user).id).save
+    visit '/logs/all'
+    expect(page).to have_content('Peepee jjeeejee')
   end
 
 end

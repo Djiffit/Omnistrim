@@ -22,8 +22,3 @@ describe "user creation" do
   end
 
 end
-
-
-# - bundle exec rake db:migrate --trace
-# - RAILS_ENV=test bundle exec rake db:migrate --trace
-# - bundle exec rake db:test:prepare
