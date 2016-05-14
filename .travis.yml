@@ -14,5 +14,7 @@ deploy:
   provider: heroku
   api_key:
     secure: lZ1roymPs3q41r31Lv3ZKQHvGBtiFLyyA5eaqW3L7NxxZ2q3j7Rz49OVp8zrx1F5vzya50VyeDtVLpj/pHW/ZTWLEx3is7u4ExQuzfn4tPdzKGxny0pM8VnRFKhpo3I1foWJJvty4iT+MB+cf2eRK778PIRCCfIC54iyP+sSDIIK5/+foD1sV46kkrZrrfCeVs5CPaLi+Kay7HopfWgzL6Y0JyFUHl1LARTi6m5OruK+p3yCybFfvF4/+8zkOVs+/XIO5BzQGb5mAwEEapFsT6RRPVpiDIwe9LjVgwlmp/a10QjY0kK0dYrJBPd3XEvb9okq91rWyDfNIw0R9pkPabwkXpWIVogvhZQQa+JmjAjsgRmCcKHrfxj2gaIAYXavuvaWuyQtVv7i1aIQZ6unaSrPaRUnkfcxnRjbAfWaWMEp/AvZgJIRA+CwCd+DvbrJ47aGVtzhmefYixJbnNDje0EXGI+p/eaGs/Dfo+9GeTjRpL7dgtcPPeO5riqVi76DepfeZeS5miLaljUXGRfg1zabGvTHKf933kFFWkFC9yOEw08eiGylmXxAkLy+jS7V7V8I2++Irbzm3sT3gCq4PuEhVWAOcwfcSAAbitsVztL3sMJiP/slNylIK/7nJctf3mVsulEO1A0lD1QXgiU7SxJIUKCYi4KRbl586j6akqo=
-
+  app: omnistrim
+  on:
+    repo: Djiffit/Omnistrim
 
