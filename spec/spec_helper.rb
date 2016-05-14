@@ -19,6 +19,7 @@
 RSpec.configure do |config|
   require 'coveralls'
   Coveralls.wear!
+  require "rack_session_access/capybara"
 
   ENV["RAILS_ENV"] = 'test'
   # rspec-expectations config goes here. You can use an alternate

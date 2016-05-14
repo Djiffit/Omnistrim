@@ -10,34 +10,23 @@ describe "messaging functionality" do
     click_button('Log in')
   end
 
-  it "shows personal messages to the sender and recipient" do
-    FactoryGirl.create(:user2)
-    sign_in(username: 'Pekkaa', password: 'pekka')
-    visit '/twitch/lirik'
-    click_button('Toggle omnichat')
-    fill_in('message[content]', with: '/w Pekkaa testing the wisperings')
-    click_button('Send')
-    fill_in('message[content]', with: '/w Pekkaa thesting the whisperings')
-    click_button('Send')
-    wait(15.seconds).for(page).to have_content('testing the')
-    expect(page).to have_content('From Pekkaa: testing the wisperings')
-    expect(page).to have_content('To Pekkaa: testing the wisperings')
-  end
+
 
   it "shows a public message in the chat box" do
-    visit '/twitch/lirik'
-    click_button('Toggle omnichat')
-    fill_in('message[content]', with: 'This message is a test message')
-    click_button('Send')
-    fill_in('message[content]', with: 'This message is a test message')
-    click_button('Send')
-    expect(page).to have_content('message is a test message')
+    Message.create(content:'Peepee jjeeejee', user_id:FactoryGirl.create(:user).id).save
+    visit '/'
+    expect(page).to have_content('Peepee jjeeejee')
   end
 
+  it "shows personal messages to the sender and recipient" do
+    sign_in(username: 'Pekka', password: 'pekka')
+    visit '/'
+    Message.create(content:'/w Pekka antoisaa juttua kiva kiva', target_name: 'Pekka', target_user_id:FactoryGirl.create(:user).id , user_id:FactoryGirl.create(:user).id).save
+    visit '/'
+  end
 
   it 'shows society messages to society members' do
-    visit '/societies/1'
-    click_button
+
   end
 
 end

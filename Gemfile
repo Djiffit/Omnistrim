@@ -24,6 +24,7 @@ gem 'coveralls', require: false
 
 group :test, :development do
   gem 'selenium-webdriver'
+  gem 'rack_session_access'
   gem 'database_cleaner'
   gem 'factory_girl_rails'
   gem 'capybara'

@@ -10,22 +10,27 @@ describe "favorite functionality" do
   end
 
   it "adds a favorite when favorite button is pressed" do
+    User.all.each do |s| s.destroy end
+    user = FactoryGirl.create(:user)
     sign_in(username: "Pekka", password: "pekka")
     visit '/twitch/MANvsGAME'
     click_button('Favorite')
-    visit user_path(1)
+    visit user_path(user)
     save_and_open_page
     expect(page).to have_css("a#MANvsGAME")
   end
 
   it "removes favorite when pressing remove button" do
+    User.all.each do |s| s.destroy end
+    user = FactoryGirl.create(:user)
     visit societies_path
-
+    sign_in(username: "Pekka", password: "pekka")
     visit '/twitch/MANvsGAME'
+    save_and_open_page
     click_button('Favorite')
-    visit user_path(1)
+    click_button('Favorite')
+    visit user_path(user)
     expect(page).not_to have_css("a#MANvsGAME")
-
   end
 
 end
