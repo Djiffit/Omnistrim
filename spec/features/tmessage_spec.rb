@@ -41,7 +41,6 @@ describe "messaging functionality" do
     Message.create(content:'Peepee jjeeejee', user_id:1).save
     visit '/logs/'
     visit '/logs/all'
-    save_and_open_page
     expect(page).to have_content('Peepee jjeeejee')
     visit '/logs/Pekka'
     expect(page).to have_content('Peepee jjeeejee')
