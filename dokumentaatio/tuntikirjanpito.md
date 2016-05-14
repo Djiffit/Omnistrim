@@ -13,3 +13,5 @@
 | 25.3 | Youtube tilin linkitys ja Youtube videoiden upotus     | 5h |
 | 29.4 | Käyttöliittymän parantaminen, yhteisöjen lisääminen ja niille yhteisökohtaisten kanavien konfigurointi     | 6h |
 | 30.4 | Yksityisviestien lisääminen järjestelmään, viestien suodattaminen sekä järjestöjen toiminnallisuuden kehittäminen     | 6h |
+| 13.5 | Testien Sota: Episodi 1, jotain vaarallisia bugeja korjattu, myös joitain käyttöliittymäpäivityksiä     | 8h |
+| 14.5 | Testien Sota: Episodi 2, rikottiin korjattiin rikottiin korjattiin rikottiin rikottiin korjattiin korjattiin rikottiin rikottiin kai jotain saatiin aikaan  | 12h |

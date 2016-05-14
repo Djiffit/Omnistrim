@@ -40,7 +40,7 @@ class SessionController < ApplicationController
   end
 
   def create
-    @user = User.find_by(name:params[:username])
+    @user = User.find_by(name:params[:username].capitalize)
     if @user && @user.authenticate(params[:password])
       session[:user] = @user.id
       redirect_to user_path(@user)

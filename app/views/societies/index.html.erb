@@ -2,30 +2,33 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Societies</h1>
-
-<table>
-  <thead>
-  <tr>
-    <th>Name</th>
-    <th>Abbreviation</th>
-    <th>Description</th>
-    <th colspan="3"></th>
-  </tr>
-  </thead>
-
-  <tbody>
-  <% @societies.each do |society| %>
-      <tr>
-        <td><%= society.name %></td>
-        <td><%= society.abbreviation %></td>
-        <td><%= society.description %></td>
-        <td><%= link_to 'Show', society %></td>
-        <td><%= link_to 'Edit', edit_society_path(society) %></td>
-        <td><%= link_to 'Destroy', society, method: :delete, data: {confirm: 'Are you sure?'} %></td>
-      </tr>
-  <% end %>
-  </tbody>
-</table>
+<div id="societyList" style="color:#eeeeee ; padding-left: 5%; width: 90%">
+  <table class="table table-hover table-condensed">
+    <thead>
+    <tr>
+      <th style="">
+        Name
+      </th>
+      <th style="">
+      Abbreviation
+    </th>
+      <th style="">
+        Description
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @societies.each do |society| %>
+        <tr>
+          <td> <%= link_to society.name, society_path(society) %> </td>
+          <td style="color: red; padding-left: 1.5%;"> <%= society.abbreviation %> </td>
+          <td> <%= society.description %></td>
+          <td> <%= link_to 'Show', society_path(society) %> </td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
 
 <br>
 
