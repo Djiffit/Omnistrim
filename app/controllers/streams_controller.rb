@@ -23,8 +23,17 @@ class StreamsController < ApplicationController
     if Stream.find_by(name: params[:name], provider: params[:provider]).nil?
       stream = Stream.create(name: params[:name], provider: params[:provider])
       if (@provider == 'twitch')
-        stream.icon = (HTTParty.get ('https://api.twitch.tv/kraken/streams/'+params[:name].downcase))['stream']['channel']['logo']
-        stream.save
+        strim = (HTTParty.get ('https://api.twitch.tv/kraken/streams/'+params[:name].downcase))
+        if strim['stream'] == "null"
+          stream.icon = strim['stream']['channel']['logo']
+          stream.save
+        else
+          strim = (HTTParty.get ('https://api.twitch.tv/kraken/channels/'+params[:name].downcase))
+          if strim['status'] != 404
+            stream.icon = strim['logo']
+          else
+            redirect_to '/', notice: "Channel not found!"
+          end
       end
       if (@provider == 'ustream')
         stream.icon = @stream['thumbnail_url']
@@ -35,6 +44,7 @@ class StreamsController < ApplicationController
         stream.save
       end
     end
+      end
   end
 
   def find
@@ -53,19 +63,7 @@ class StreamsController < ApplicationController
   end
 
 
-  def create
-    @stream = Stream.new(stream_params)
 
-    respond_to do |format|
-      if @stream.save
-        format.html { redirect_to @stream, notice: 'Stream was successfully created.' }
-        format.json { render :show, status: :created, location: @stream }
-      else
-        format.html { render :new }
-        format.json { render json: @stream.errors, status: :unprocessable_entity }
-      end
-    end
-  end
 
   private
   # Use callbacks to share common setup or constraints between actions.

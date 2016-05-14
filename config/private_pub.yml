@@ -2,8 +2,8 @@ development:
   server: "http://omnistrimfaye.herokuapp.com/faye"
   secret_token: "omnistrim"
 test:
-  server: "http://localhost:9292/faye"
-  secret_token: "secret"
+  server: "http://omnistrimfaye.herokuapp.com/faye"
+  secret_token: "omnistrim"
 production:
   server: "http://omnistrimfaye.herokuapp.com/faye"
   secret_token: "omnistrim"

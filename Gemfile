@@ -3,9 +3,9 @@ source 'http://rubygems.org'
 gem 'rails'
 gem 'thin'
 group :development, :test do
-  gem 'sqlite3'
+ gem 'sqlite3'
 end
-
+ 
 group :production do
   gem 'pg'
   gem 'rails_12factor'
@@ -19,8 +19,9 @@ gem 'yt'
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
 end
+gem 'coveralls', require: false
 
-group :test do
+group :test, :development do
   gem 'selenium-webdriver'
   gem 'database_cleaner'
   gem 'factory_girl_rails'
