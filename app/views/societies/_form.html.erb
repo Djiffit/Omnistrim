@@ -19,7 +19,7 @@
         <span class="input-group-addon">
            <i class="glyphicon glyphicon-user"></i>
         </span>
-          <input class="form-control" autocomplete="off" id="name" name="name" type="text" placeholder="Enter the name of this society" style="width: 400px;"/>
+          <input class="form-control" autocomplete="off" id="nameS" name="nameS" type="text" placeholder="Enter the name of this society" style="width: 400px;"/>
         </div>
         <br>
         <div class="form-group input-group has-feedback" style="width: 400px">
@@ -38,14 +38,16 @@
         <br>
         <div class="row">
           <div class="btn-group">
-            <button type="button" class="btn btn-default dropdown-toggle form-control" onclick="enableThing()" data-toggle="dropdown" style="width: 400px;">
+            <button id="streamS" type="button" class="btn btn-default dropdown-toggle form-control" onclick="enableThing()" data-toggle="dropdown" style="width: 400px;">
               <span data-bind="label">Select One</span>&nbsp;<span class="caret"></span>
             </button>
             <ul class="dropdown-menu" style="width: 400px;" role="menu">
-              <% @streams = @streams.sort_by { |s| s.name } %>
-              <% @streams.each do |s| %>
-                  <li onclick="setStreamId(<%= s.id %>)">
-                    <a href="#" onclick="setStreamId(<%= s.id %>)"><%= s.name %></a></li>
+              <% if @streams %>
+                  <% @streams = @streams.sort_by { |s| s.name } %>
+                  <% @streams.each do |s| %>
+                      <li onclick="setStreamId(<%= s.id %>)">
+                        <a href="#" onclick="setStreamId(<%= s.id %>)"><%= s.name %></a></li>
+                  <% end %>
               <% end %>
             </ul>
           </div>

@@ -1,7 +1,9 @@
 <body style=" overflow-y:auto; padding-top: 50px; padding-left: 50px; color: lightskyblue;">
-<div class="col-sm-2">
-  <img style="width: 240px; padding-left: -4%; position:relative; right: 65px;" src="<%= Stream.find_by(id: @society.stream_id).icon %>"/>
-</div>
+<% if @society.stream_id %>
+    <div class="col-sm-2">
+      <img style="width: 240px; padding-left: -4%; position:relative; right: 65px;" src="<%= Stream.find_by(id: @society.stream_id).icon %>"/>
+    </div>
+<% end %>
 <div style="width: calc(100vw - 291px)">
 
   <h1><%= @society.name %> society</h1>
@@ -14,7 +16,9 @@
   <% end %>
 
   <h5>Society established on <%= @society.created_at %> by <%= @society.user.name %></h5>
-  <p>Favorite: <%= link_to(Stream.find_by(id: @society.stream_id).name, '/'+Stream.find_by(id: @society.stream_id).provider + '/' +Stream.find_by(id: @society.stream_id).name)%></p>
+  <% if @society.stream_id %>
+      <p>Favorite: <%= link_to(Stream.find_by(id: @society.stream_id).name, '/'+Stream.find_by(id: @society.stream_id).provider + '/' +Stream.find_by(id: @society.stream_id).name) %></p>
+  <% end %>
   <h3>Current memberships:</h3>
   <h4>
     <% @users.each do |user| %>
