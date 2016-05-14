@@ -3,7 +3,8 @@ rvm:
 - 2.3.0
 script:
 - bundle exec rake db:create
-- bundle exec rake db:migrate RAILS_ENV="development"
+- bundle exec rake db:reset
+- bundle exec rake db:migrate
 - bundle exec rspec -fd spec
 after_success:
   - coveralls:report
