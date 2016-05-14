@@ -17,7 +17,6 @@ class SessionController < ApplicationController
     namerequest = HTTParty.get('https://api.twitch.tv/kraken/user?oauth_token='+response["access_token"])
     current_user.update_attribute(:twitchname, namerequest["display_name"])
     createStreamsAndFavorites
-    redirect_to user_path(current_user)
   end
 
   def createStreamsAndFavorites
