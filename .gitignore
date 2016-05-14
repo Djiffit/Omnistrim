@@ -10,9 +10,9 @@
 # Ignore the default SQLite database.
 /db/*.sqlite3-journal
 /db/*.sqlite3
-coverage/.resultset.json
-db/development.sqlite3
-db/test.sqlite3
+/coverage/.resultset.json
+/db/development.sqlite3
+/db/test.sqlite3
 # Ignore all logfiles and tempfiles.
 /log/*
 !/log/.keep
