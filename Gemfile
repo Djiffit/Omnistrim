@@ -3,11 +3,11 @@ source 'http://rubygems.org'
 gem 'rails'
 gem 'thin'
 group :development, :test do
-
+ gem 'sqlite3'
 end
-  gem 'sqlite3'
+ 
 group :production do
-  
+  gem 'pg'
   gem 'rails_12factor'
 end
 
@@ -20,7 +20,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
 end
 
-group :test do
+group :test, :development do
   gem 'selenium-webdriver'
   gem 'database_cleaner'
   gem 'factory_girl_rails'

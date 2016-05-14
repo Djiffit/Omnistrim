@@ -149,6 +149,7 @@ GEM
     omniauth-oauth2 (1.4.0)
       oauth2 (~> 1.0)
       omniauth (~> 1.2)
+    pg (0.18.4)
     private_pub (1.0.3)
       faye
     rack (1.6.4)
@@ -271,6 +272,7 @@ DEPENDENCIES
   launchy
   nifty-generators
   omniauth-oauth2
+  pg
   private_pub
   rails
   rails_12factor

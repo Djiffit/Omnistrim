@@ -3,11 +3,11 @@ source 'http://rubygems.org'
 gem 'rails'
 gem 'thin'
 group :development, :test do
-  gem 'sqlite3'
-end
 
-group :production do
+end
   gem 'sqlite3'
+group :production do
+  
   gem 'rails_12factor'
 end
 
