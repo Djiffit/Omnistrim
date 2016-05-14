@@ -16,7 +16,6 @@ describe "favorite functionality" do
     visit '/twitch/MANvsGAME'
     click_button('Favorite')
     visit user_path(user)
-    save_and_open_page
     expect(page).to have_css("a#MANvsGAME")
   end
 
@@ -26,7 +25,6 @@ describe "favorite functionality" do
     visit societies_path
     sign_in(username: "Pekka", password: "pekka")
     visit '/twitch/MANvsGAME'
-    save_and_open_page
     click_button('Favorite')
     click_button('Favorite')
     visit user_path(user)

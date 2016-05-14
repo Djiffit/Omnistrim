@@ -3,6 +3,7 @@ require 'helpers'
 
 describe "opening streams" do
   it "twitch works" do
+    Stream.all.each do |s| s.destroy end
     visit '/twitch/lirik'
     expect(page).to have_css("#lirik")
   end
