@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   get 'ytauth/', to: 'session#create_auth_yt'
   get 'channel/view/:id', to: 'streams#show_channel'
   get '/youtubeauthlink', to: 'streams#show'
+  get '/help', to: 'application#help'
 end
 # s4racyuaz2kt0hn66jrfu5bamnut9ci
 # https://accounts.google.com/o/oauth2/auth?access_type=offline&approval_prompt=auto&client_id=527203940713-6o128c0piis6gm1t3rnk3rrmmdvq8tgr.apps.googleusercontent.com&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fytauth&response_type=code&scope=https://www.googleapis.com/auth/youtube&approval_prompt=force

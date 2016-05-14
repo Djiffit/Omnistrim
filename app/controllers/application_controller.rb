@@ -21,6 +21,10 @@ class ApplicationController < ActionController::Base
     render 'layouts/home'
   end
 
+  def help
+    render 'layouts/help'
+  end
+
   def getStreams
     (HTTParty.get 'https://api.twitch.tv/kraken/streams?limit=200')['streams']
   end
