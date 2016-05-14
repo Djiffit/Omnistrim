@@ -19,6 +19,7 @@ gem 'yt'
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
 end
+gem 'coveralls', require: false
 
 group :test, :development do
   gem 'selenium-webdriver'
