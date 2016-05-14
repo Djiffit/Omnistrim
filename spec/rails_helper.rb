@@ -28,7 +28,7 @@ require 'rspec/rails'
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
-  config.wait_timeout = 12
+  config.wait_timeout = 208
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
@@ -51,6 +51,9 @@ RSpec.configure do |config|
   # The different available types are documented in the features, such as in
   # https://relishapp.com/rspec/rspec-rails/docs
   config.infer_spec_type_from_file_location!
+  # Capybara.default_max_wait_time = 5
+  # Capybara.current_driver = :selenium
+  # Capybara.app_host = 'http://localhost:3000'
 
   # Filter lines from Rails gems in backtraces.
   config.filter_rails_from_backtrace!

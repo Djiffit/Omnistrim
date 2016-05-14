@@ -10,18 +10,34 @@ describe "messaging functionality" do
     click_button('Log in')
   end
 
-  before :each do
-    sign_in(username:'Pekkaa', password:'pekka')
+  it "shows personal messages to the sender and recipient" do
+    FactoryGirl.create(:user2)
+    sign_in(username: 'Pekkaa', password: 'pekka')
+    visit '/twitch/lirik'
+    click_button('Toggle omnichat')
+    fill_in('message[content]', with: '/w Pekkaa testing the wisperings')
+    click_button('Send')
+    fill_in('message[content]', with: '/w Pekkaa thesting the whisperings')
+    click_button('Send')
+    wait(15.seconds).for(page).to have_content('testing the')
+    expect(page).to have_content('From Pekkaa: testing the wisperings')
+    expect(page).to have_content('To Pekkaa: testing the wisperings')
   end
 
   it "shows a public message in the chat box" do
-    visit '/'
+    visit '/twitch/lirik'
+    click_button('Toggle omnichat')
     fill_in('message[content]', with: 'This message is a test message')
-    page.should have_xpath("//input[@value='This message is a test message']")
     click_button('Send')
-    save_and_open_page
-    wait(10.seconds).for(page).to have_content('is a test message')
-    save_and_open_page
+    fill_in('message[content]', with: 'This message is a test message')
+    click_button('Send')
+    expect(page).to have_content('message is a test message')
+  end
+
+
+  it 'shows society messages to society members' do
+    visit '/societies/1'
+    click_button
   end
 
 end

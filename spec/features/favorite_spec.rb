@@ -9,22 +9,18 @@ describe "favorite functionality" do
     click_button('Log in')
   end
 
-  before :each do
-    sign_in(username: "Pekkaa", password: "pekka")
-  end
-
   it "adds a favorite when favorite button is pressed" do
+    sign_in(username: "Pekka", password: "pekka")
     visit '/twitch/MANvsGAME'
     click_button('Favorite')
     visit user_path(1)
+    save_and_open_page
     expect(page).to have_css("a#MANvsGAME")
   end
 
   it "removes favorite when pressing remove button" do
-    visit '/twitch/MANvsGAME'
-    click_button('Favorite')
-    visit user_path(1)
-    expect(page).to have_css("a#MANvsGAME")
+    visit societies_path
+
     visit '/twitch/MANvsGAME'
     click_button('Favorite')
     visit user_path(1)
