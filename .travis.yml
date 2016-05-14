@@ -8,13 +8,6 @@ script:
 - bundle exec rspec -fd spec
 after_success:
   - coveralls
-deploy:
-  provider: heroku
-  api_key:
-    secure: 4a7e9f2d-44c4-4d4a-b423-628014d2deb2
-  app: omnistrim
-  on:
-    repo: Djiffit/Omnistrim
 notifications:
   email: false
 
