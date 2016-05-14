@@ -63,19 +63,7 @@ class StreamsController < ApplicationController
   end
 
 
-  def create
-    @stream = Stream.new(stream_params)
 
-    respond_to do |format|
-      if @stream.save
-        format.html { redirect_to @stream, notice: 'Stream was successfully created.' }
-        format.json { render :show, status: :created, location: @stream }
-      else
-        format.html { render :new }
-        format.json { render json: @stream.errors, status: :unprocessable_entity }
-      end
-    end
-  end
 
   private
   # Use callbacks to share common setup or constraints between actions.

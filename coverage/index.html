@@ -14,27 +14,27 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-05-14T14:07:12+03:00">2016-05-14T14:07:12+03:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-05-14T14:11:50+03:00">2016-05-14T14:11:50+03:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">50.17%</span></span>
+    (<span class="covered_percent"><span class="red">51.19%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.41
+         2.48
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>20</b> files in total.
-    <b>303</b> relevant lines. 
-    <span class="green"><b>152</b> lines covered</span> and
-    <span class="red"><b>151</b> lines missed </span>
+    <b>295</b> relevant lines. 
+    <span class="green"><b>151</b> lines covered</span> and
+    <span class="red"><b>144</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -122,12 +122,12 @@
       
       <tr>
         <td class="strong"><a href="#4fa4d2b5eb50e862da7636e2b6ed8455d4704efc" class="src_link" title="app/controllers/streams_controller.rb">app/controllers/streams_controller.rb</a></td>
-        <td class="red strong">69.09 %</td>
-        <td>90</td>
-        <td>55</td>
-        <td>38</td>
-        <td>17</td>
-        <td>1.8</td>
+        <td class="red strong">78.72 %</td>
+        <td>78</td>
+        <td>47</td>
+        <td>37</td>
+        <td>10</td>
+        <td>2.1</td>
       </tr>
       
       <tr>
@@ -259,20 +259,20 @@
           <div class="file_list_container" id="Controllers">
   <h2>
     <span class="group_name">Controllers</span>
-    (<span class="covered_percent"><span class="red">43.45%</span></span>
+    (<span class="covered_percent"><span class="red">44.4%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.6
+         2.68
        </span>
     </span> hits/line)
   </h2>
   <a name="Controllers"></a>
   <div>
     <b>9</b> files in total.
-    <b>267</b> relevant lines. 
-    <span class="green"><b>116</b> lines covered</span> and
-    <span class="red"><b>151</b> lines missed </span>
+    <b>259</b> relevant lines. 
+    <span class="green"><b>115</b> lines covered</span> and
+    <span class="red"><b>144</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -360,12 +360,12 @@
       
       <tr>
         <td class="strong"><a href="#4fa4d2b5eb50e862da7636e2b6ed8455d4704efc" class="src_link" title="app/controllers/streams_controller.rb">app/controllers/streams_controller.rb</a></td>
-        <td class="red strong">69.09 %</td>
-        <td>90</td>
-        <td>55</td>
-        <td>38</td>
-        <td>17</td>
-        <td>1.8</td>
+        <td class="red strong">78.72 %</td>
+        <td>78</td>
+        <td>47</td>
+        <td>37</td>
+        <td>10</td>
+        <td>2.1</td>
       </tr>
       
       <tr>
@@ -2419,11 +2419,11 @@
         <div class="source_table" id="4fa4d2b5eb50e862da7636e2b6ed8455d4704efc">
   <div class="header">
     <h3>app/controllers/streams_controller.rb</h3>
-    <h4><span class="red">69.09 %</span> covered</h4>
+    <h4><span class="red">78.72 %</span> covered</h4>
     <div>
-      <b>55</b> relevant lines. 
-      <span class="green"><b>38</b> lines covered</span> and
-      <span class="red"><b>17</b> lines missed.</span>
+      <b>47</b> relevant lines. 
+      <span class="green"><b>37</b> lines covered</span> and
+      <span class="red"><b>10</b> lines missed.</span>
     </div>
   </div>
   
@@ -2820,151 +2820,79 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="66">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def create</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="67">
-          
-          
-          <code class="ruby">    @stream = Stream.new(stream_params)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="68">
+        <li class="never" data-hits="" data-linenumber="66">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="69">
-          
-          
-          <code class="ruby">    respond_to do |format|</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="70">
-          
-          
-          <code class="ruby">      if @stream.save</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="71">
-          
-          
-          <code class="ruby">        format.html { redirect_to @stream, notice: &#39;Stream was successfully created.&#39; }</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="72">
-          
-          
-          <code class="ruby">        format.json { render :show, status: :created, location: @stream }</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="73">
-          
-          
-          <code class="ruby">      else</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="74">
-          
-          
-          <code class="ruby">        format.html { render :new }</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="75">
-          
-          
-          <code class="ruby">        format.json { render json: @stream.errors, status: :unprocessable_entity }</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="76">
-          
-          
-          <code class="ruby">      end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="77">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="78">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="79">
+        <li class="never" data-hits="" data-linenumber="67">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="80">
+        <li class="covered" data-hits="1" data-linenumber="68">
           <span class="hits">1</span>
           
           <code class="ruby">  private</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="81">
+        <li class="never" data-hits="" data-linenumber="69">
           
           
           <code class="ruby">  # Use callbacks to share common setup or constraints between actions.</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="82">
+        <li class="covered" data-hits="1" data-linenumber="70">
           <span class="hits">1</span>
           
           <code class="ruby">  def set_stream</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="83">
+        <li class="missed" data-hits="0" data-linenumber="71">
           
           
           <code class="ruby">    @stream = Stream.find(params[:id])</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="84">
+        <li class="never" data-hits="" data-linenumber="72">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="85">
+        <li class="never" data-hits="" data-linenumber="73">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="86">
+        <li class="never" data-hits="" data-linenumber="74">
           
           
           <code class="ruby">  # Never trust parameters from the scary internet, only allow the white list through.</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="87">
+        <li class="covered" data-hits="1" data-linenumber="75">
           <span class="hits">1</span>
           
           <code class="ruby">  def stream_params</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="88">
+        <li class="missed" data-hits="0" data-linenumber="76">
           
           
           <code class="ruby">    params.require(:stream).permit(:name, :provider)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="89">
+        <li class="never" data-hits="" data-linenumber="77">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="90">
+        <li class="never" data-hits="" data-linenumber="78">
           
           
           <code class="ruby">end</code>
