@@ -2,8 +2,6 @@ language: ruby
 rvm:
 - 2.3.0
 script:
-- bundle exec sqlite3 db/development.sqlite3
-- bundle exec .schema
 - bundle exec rake db:create
 - bundle exec rake db:migrate RAILS_ENV="production"
 - bundle exec rake db:test:prepare --trace
