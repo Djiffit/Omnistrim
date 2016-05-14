@@ -10,7 +10,7 @@ describe "favorite functionality" do
   end
 
   before :each do
-    sign_in(username: "Pekka", password: "pekka")
+    sign_in(username: "Pekkaa", password: "pekka")
   end
 
   it "adds a favorite when favorite button is pressed" do
@@ -29,6 +29,7 @@ describe "favorite functionality" do
     click_button('Favorite')
     visit user_path(1)
     expect(page).not_to have_css("a#MANvsGAME")
+
   end
 
 end

@@ -18,6 +18,7 @@ gem 'sass-rails'
 gem 'yt'
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
+  gem 'rspec-wait'
 end
 gem 'coveralls', require: false
 
@@ -25,7 +26,6 @@ group :test, :development do
   gem 'selenium-webdriver'
   gem 'database_cleaner'
   gem 'factory_girl_rails'
-  gem 'webmock'
   gem 'capybara'
   gem 'launchy'
   gem 'simplecov', require: false

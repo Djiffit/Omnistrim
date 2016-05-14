@@ -21,7 +21,7 @@ describe "society functionality" do
     click_button('streamS')
     click_link('MANvsGAME', match: :first)
     click_button('Create')
-    expect(page).to have_content('Pepperoni society')
+    expect(page).to have_content('Society was successfully created.')
   end
 
   it 'Society is joinable after creation' do
