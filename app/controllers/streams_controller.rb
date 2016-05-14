@@ -62,17 +62,4 @@ class StreamsController < ApplicationController
     redirect_to('/'+params[:provider]+'/'+params[:name])
   end
 
-
-
-
-  private
-  # Use callbacks to share common setup or constraints between actions.
-  def set_stream
-    @stream = Stream.find(params[:id])
-  end
-
-  # Never trust parameters from the scary internet, only allow the white list through.
-  def stream_params
-    params.require(:stream).permit(:name, :provider)
-  end
 end

@@ -18,7 +18,10 @@ describe "opening streams" do
   end
 
   it "azubu works" do
-    visit '/azubu/EPGTV'
+    visit '/societies'
+    select "Azubu", :from => "provider"
+    fill_in('name', with:'EPGTV')
+    click_button('Go!')
     expect(page).to have_css('#EPGTV')
   end
 
