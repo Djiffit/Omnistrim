@@ -11,12 +11,12 @@
 //= require_tree .
 
 function toggle_visibility(id) {
-    var e = document.getElementById(id);
-    if (e.style.display != 'none') {
-        e.style.display = 'none';
+    var efd = document.getElementById(id);
+    if (efd.style.display != 'none') {
+        efd.style.display = 'none';
     }
     else {
-        e.style.display = 'block';
+        efd.style.display = 'block';
     }
 }
 function toggle_visibility_plural(name) {
@@ -38,21 +38,21 @@ function toggle_visibility_plural(name) {
 }
 
 function hideMessage(type) {
-    var e;
+    var ebv;
     if (type === 'public') {
         if (document.getElementById('badNormal').style.display != 'none') {
-            var e = document.getElementsByName('publicMessage');
-            e[e.length - 1].style.display = 'none';
+            var ebv = document.getElementsByName('publicMessage');
+            ebv[ebv.length - 1].style.display = 'none';
         }
     } else if (type === 'private') {
         if (document.getElementById('badPrivate').style.display != 'none') {
-            var e = document.getElementsByName('privateMessage');
-            e[e.length - 1].style.display = 'none';
+            var ebv = document.getElementsByName('privateMessage');
+            ebv[ebv.length - 1].style.display = 'none';
         }
     } else if (type === 'society') {
         if (document.getElementById('badSociety').style.display != 'none') {
-            var e = document.getElementsByName('societyMessage');
-            e[e.length - 1].style.display = 'none';
+            var ebv = document.getElementsByName('societyMessage');
+            ebv[ebv.length - 1].style.display = 'none';
         }
     }
     scrollBottom();
@@ -64,28 +64,28 @@ function scrollBottom() {
 }
 
 function showOmni() {
-    var e = document.getElementById('omniscreen');
-    e.style.display = 'block';
-    var b = document.getElementById('youtubeBox');
-    var c = document.getElementById('twitchFollows');
-    c.style.display = 'none';
-    b.style.display = 'none';
+    var esh = document.getElementById('omniscreen');
+    esh.style.display = 'block';
+    var bsh = document.getElementById('youtubeBox');
+    var csh = document.getElementById('twitchFollows');
+    csh.style.display = 'none';
+    bsh.style.display = 'none';
 }
 function showYt() {
-    var e = document.getElementById('omniscreen');
-    var b = document.getElementById('youtubeBox');
-    var c = document.getElementById('twitchFollows');
-    e.style.display = 'none';
-    c.style.display = 'none';
-    b.style.display = 'block';
+    var esf = document.getElementById('omniscreen');
+    var bsf = document.getElementById('youtubeBox');
+    var csf = document.getElementById('twitchFollows');
+    esf.style.display = 'none';
+    csf.style.display = 'none';
+    bsf.style.display = 'block';
 }
 function showTwitch() {
-    var e = document.getElementById('omniscreen');
-    var b = document.getElementById('youtubeBox');
-    var c = document.getElementById('twitchFollows');
-    c.style.display = 'block';
-    e.style.display = 'none';
-    b.style.display = 'none';
+    var esd = document.getElementById('omniscreen');
+    var bsd = document.getElementById('youtubeBox');
+    var csd = document.getElementById('twitchFollows');
+    csd.style.display = 'block';
+    esd.style.display = 'none';
+    bsd.style.display = 'none';
 }
 function enableThing() {
     $(document.body).on('click', '.dropdown-menu li', function (event) {

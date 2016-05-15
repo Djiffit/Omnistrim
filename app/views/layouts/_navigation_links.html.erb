@@ -36,33 +36,34 @@
                 </form>
               </div>
           <% else %>
-              <div class="favoritebutton">
-                <%= form_tag '/favorites/destroy' %>
-                <input type="hidden" name="service" value="<%= @provider %>">
-                <input type="hidden" name="channel" value="<%= params[:name] %>">
-                <input type="submit" value="Favorite" class="btn btn-danger btn-xs">
-                </form>
-              </div>
+              <% if params[:name] && params[:provider] %>
+                  <div class="favoritebutton">
+                    <%= form_tag '/favorites/destroy' %>
+                    <input type="hidden" name="service" value="<%= @provider %>">
+                    <input type="hidden" name="channel" value="<%= params[:name] %>">
+                    <input type="submit" value="Favorite" class="btn btn-danger btn-xs">
+                    </form>
+                  </div>
+              <% end %>
           <% end %>
-      <% end %>
-      <!--<li style="padding-top: 8px; padding-left: 12px;"><button class="btn btn-success btn-xs" formmethod="post" remote="true">Favorite</button></li>-->
-    </li>
-    <li>
-      <%= link_to 'HELP', '/help' %>
-    </li>
+          <!--<li style="padding-top: 8px; padding-left: 12px;"><button class="btn btn-success btn-xs" formmethod="post" remote="true">Favorite</button></li>-->
+          </li>
+          <li>
+            <%= link_to 'HELP', '/help' %>
+          </li>
 
-    <% if current_user.twitch.nil? %>
-        <li>
-          <%= link_to 'Twitch Auth', 'https://api.twitch.tv/kraken/oauth2/authorize?response_type=code&client_id=ht0ychka5fc2g0ao527ick5mjcvmob0&redirect_uri=http://omnistrim.herokuapp.com/twitchauth/&scope=user_read+user_follows_edit' %>
-    <% end %>
-    </li>
-    <li>
-      <% if current_user.youtubetoken.nil? %>
-          <%= link_to 'Youtube Link', 'https://accounts.google.com/o/oauth2/auth?access_type=offline&approval_prompt=force&client_id=527203940713-6o128c0piis6gm1t3rnk3rrmmdvq8tgr.apps.googleusercontent.com&redirect_uri=http%3A%2F%2Fomnistrim.herokuapp.com/ytauth&response_type=code&scope=https://www.googleapis.com/auth/youtube&' %>
-      <% end %>
-    </li>
+          <% if current_user.twitch.nil? %>
+              <li>
+                <%= link_to 'Twitch Auth', 'https://api.twitch.tv/kraken/oauth2/authorize?response_type=code&client_id=ht0ychka5fc2g0ao527ick5mjcvmob0&redirect_uri=http://omnistrim.herokuapp.com/twitchauth/&scope=user_read+user_follows_edit' %>
+          <% end %>
+          </li>
+          <li>
+            <% if current_user.youtubetoken.nil? %>
+                <%= link_to 'Youtube Link', 'https://accounts.google.com/o/oauth2/auth?access_type=offline&approval_prompt=force&client_id=527203940713-6o128c0piis6gm1t3rnk3rrmmdvq8tgr.apps.googleusercontent.com&redirect_uri=http%3A%2F%2Fomnistrim.herokuapp.com/ytauth&response_type=code&scope=https://www.googleapis.com/auth/youtube&' %>
+            <% end %>
+          </li>
 
-<% else %>
-    <li><%= link_to 'Sign in', signin_url %></li>
-    <li><%= link_to 'Sign up', signup_url %></li>
-<% end %>
+      <% else %>
+          <li><%= link_to 'Sign in', signin_url %></li>
+          <li><%= link_to 'Sign up', signup_url %></li>
+      <% end %>
