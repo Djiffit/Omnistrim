@@ -12,7 +12,7 @@
 
 function toggle_visibility(id) {
     var efd = document.getElementById(id);
-    if (efd.style.display != 'none') {
+    if (efd.style.display !== 'none') {
         efd.style.display = 'none';
     }
     else {
@@ -24,7 +24,7 @@ function toggle_visibility_plural(name) {
     var el
     var len
     if (e.length > 0) {
-        if (e[0].style.display != 'none') {
+        if (e[0].style.display !== 'none') {
             for (var i = 0, len = e.length; i < len; i++) {
                 e[i].style.display = 'none'
             }
@@ -40,17 +40,17 @@ function toggle_visibility_plural(name) {
 function hideMessage(type) {
     var ebv;
     if (type === 'public') {
-        if (document.getElementById('badNormal').style.display != 'none') {
+        if (document.getElementById('badNormal').style.display !== 'none') {
             var ebv = document.getElementsByName('publicMessage');
             ebv[ebv.length - 1].style.display = 'none';
         }
     } else if (type === 'private') {
-        if (document.getElementById('badPrivate').style.display != 'none') {
+        if (document.getElementById('badPrivate').style.display !== 'none') {
             var ebv = document.getElementsByName('privateMessage');
             ebv[ebv.length - 1].style.display = 'none';
         }
     } else if (type === 'society') {
-        if (document.getElementById('badSociety').style.display != 'none') {
+        if (document.getElementById('badSociety').style.display !== 'none') {
             var ebv = document.getElementsByName('societyMessage');
             ebv[ebv.length - 1].style.display = 'none';
         }
