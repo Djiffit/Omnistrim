@@ -15,3 +15,4 @@
 | 30.4 | Yksityisviestien lisääminen järjestelmään, viestien suodattaminen sekä järjestöjen toiminnallisuuden kehittäminen     | 6h |
 | 13.5 | Testien Sota: Episodi 1, jotain vaarallisia bugeja korjattu, myös joitain käyttöliittymäpäivityksiä     | 8h |
 | 14.5 | Testien Sota: Episodi 2, rikottiin korjattiin rikottiin korjattiin rikottiin rikottiin korjattiin korjattiin rikottiin rikottiin kai jotain saatiin aikaan  | 12h |
+| 15.5 | Testien Sota: Episodi 3, viimeiset testit, jotain bugikorjauksia, loppudokumentointi  | 3h |
