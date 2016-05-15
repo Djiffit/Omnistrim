@@ -8,7 +8,7 @@ class StreamsController < ApplicationController
 
   def show
     @provider = params[:provider]
-    @messages = Message.where(society_id:nil, target_name:nil).last(20)
+    @messages = Message.where(society_id: nil, target_name: nil).last(20)
     if (@provider == 'ustream')
       @stream = (HTTParty.get ('http://api.embedly.com/1/oembed?url=ustream.tv/'+params[:name].downcase+'&width=1600&autoplay=true&height=900&key=:08c367084bc646d9930486f5b88d53c6'))
       if (@stream["error"])
@@ -34,17 +34,18 @@ class StreamsController < ApplicationController
           else
             redirect_to '/', notice: "Channel not found!"
           end
+        end
+
       end
       if (@provider == 'ustream')
         stream.icon = @stream['thumbnail_url']
         stream.save
       end
       if (@provider == 'azubu')
-        stream.icon = (HTTParty.get('http://api.azubu.tv/public/channel/'+params[:name].downcase))['data']['user']['url_photo_large']
+        stream.icon = (HTTParty.get('http://api.azubu.tv/public/channel/'+params[:name].downcase))['data']['user']['profile']['url_photo_large']
         stream.save
       end
     end
-      end
   end
 
   def find
