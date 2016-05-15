@@ -75,9 +75,9 @@ function showYt() {
     var esf = document.getElementById('omniscreen');
     var bsf = document.getElementById('youtubeBox');
     var csf = document.getElementById('twitchFollows');
+    bsf.style.display = 'block';
     esf.style.display = 'none';
     csf.style.display = 'none';
-    bsf.style.display = 'block';
 }
 function showTwitch() {
     var esd = document.getElementById('omniscreen');
