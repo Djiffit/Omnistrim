@@ -27,7 +27,6 @@ describe "messaging functionality" do
     # click_button('Send')
     # click_button('Send')
     expect(page).to have_content('Peepee jjeeejee')
-    click_button('Send')
   end
 
   it "shows personal messages to the sender and recipient" do
