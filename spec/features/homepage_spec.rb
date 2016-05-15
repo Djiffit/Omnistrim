@@ -17,7 +17,6 @@ describe "homepage" do
     it "loads main page" do
       visit '/help'
       visit '/'
-      expect(page).to have_link("Pekka")
       expect(page).to have_content("Show Twitch")
     end
   end

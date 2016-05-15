@@ -4,7 +4,7 @@ FactoryGirl.define do
     name "Pekka"
     password "pekka"
     password_confirmation "pekka"
-    twitch "x25aqut4a4n1b4241y4wclrwx80vr0"
+    twitch "awyaexgdl0g9ot0cjn5cby63j39q95"
     twitchname "antoisaamaanantaita"
   end
 
