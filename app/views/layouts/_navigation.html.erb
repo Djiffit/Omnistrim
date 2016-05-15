@@ -19,7 +19,7 @@
             omnichat
           </button>
       <% else %>
-          <% if @name | (@youtube | @follows) %>
+          <% if @name | @youtube | @follows %>
               <button class="btn btn-default btn-xs" style="position:relative; top: 13px; left: 10px;" onclick="showOmni();">Show
                 Omnichat
               </button>
