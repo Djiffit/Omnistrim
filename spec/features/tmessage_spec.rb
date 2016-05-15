@@ -57,7 +57,6 @@ describe "messaging functionality" do
     click_link('MANvsGAME', match: :first)
     click_button('Create')
     visit '/societies'
-    save_and_open_page
     Message.create(content:'Nice test message we have here nice very nice', user_id:1, society_id:1).save
     visit '/logs/fed'
     expect(page).to have_content('test message we have here')

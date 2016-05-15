@@ -20,7 +20,7 @@ RSpec.configure do |config|
   require 'coveralls'
   Coveralls.wear!
   require "rack_session_access/capybara"
-
+  require File.expand_path("../../config/environment", __FILE__)
   ENV["RAILS_ENV"] = 'test'
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest

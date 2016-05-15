@@ -11,6 +11,9 @@ class MessagesController < ApplicationController
       end
       findMessageType
     end
+    if !current_user
+      redirect_to '/'
+    end
   end
 
   def findMessageType
